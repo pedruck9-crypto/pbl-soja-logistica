@@ -1,0 +1,25 @@
+# Ambientes locais
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+
+# Dados do projeto: adicionar apenas arquivos pequenos e redistribuíveis
+data/originais/*
+data/hipoteses/*
+data/tratados/*
+data/resultados/*
+!data/originais/.gitkeep
+!data/hipoteses/.gitkeep
+!data/tratados/.gitkeep
+!data/resultados/.gitkeep
+
+# Saídas temporárias
+*.log
+*.tmp
+.pytest_cache/
