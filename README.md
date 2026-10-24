@@ -1,43 +1,30 @@
 # PBL: exportação e logística da soja brasileira
-
 ## Objetivo
-
-Organizar um fluxo reproduzível para analisar exportações brasileiras de soja em grão, relacionando dados agrícolas, câmbio, portos, fretes e cenários logísticos. O projeto deve preservar os dados originais, documentar fontes e hipóteses e gerar bases tratadas e resultados que outra pessoa consiga reproduzir.
-
+Organizar um fluxo reproduzível para analisar exportações brasileiras de soja em grão, relacionando dados agrícolas, câmbio, portos, fretes e cenários logísticos. O projeto deve preservar os dados originais, documentar fontes e hipóteses e gerar bases tratadas e resultados reproduzíveis.
 ## Situação atual
-
-Este repositório contém a estrutura inicial e um comando de verificação. A importação, o tratamento, os cálculos dos indicadores, a comparação de cenários e a alocação por portos ainda serão implementados. Nenhum resultado é calculado por este esqueleto.
-
+O repositório contém a documentação inicial, dependências e um comando que prepara as pastas previstas. A importação, o tratamento, os indicadores, a comparação de cenários e a alocação por portos ainda serão implementados. O comando inicial não calcula resultados.
 ## Como instalar
-
 Requisito: Python 3.11 ou superior.
-
 ```powershell
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+$env:PYTHONPATH = "src"
 ```
-
-Em macOS ou Linux, ative o ambiente com `source .venv/bin/activate`.
-
+Em macOS ou Linux, crie e ative o ambiente com `python3 -m venv .venv` e `source .venv/bin/activate`. Instale as dependências com `python -m pip install -r requirements.txt` e configure `PYTHONPATH=src` antes de executar.
 ## Como executar
-
-Na raiz do repositório:
-
+Na raiz do repositório, com o ambiente virtual ativo:
 ```powershell
 python -m soja_pipeline
 ```
-
-Por enquanto, o comando verifica a estrutura de pastas e informa que o pipeline analítico ainda precisa ser implementado. As etapas de importação e cálculo serão adicionadas depois que as regras e fontes pendentes forem definidas.
-
+Em macOS ou Linux, use `PYTHONPATH=src python -m soja_pipeline`. O comando prepara as pastas de dados e informa que o pipeline analítico ainda será implementado.
 ## Estrutura das pastas
-
 ```text
 .
 ├── config/                 # parâmetros de execução e caminhos
 ├── data/
-│   ├── originais/           # arquivos baixados das fontes, preservados sem alteração
+│   ├── originais/           # arquivos de fontes preservados sem alteração
 │   ├── hipoteses/           # custos, capacidades e cenários hipotéticos
 │   ├── tratados/            # bases limpas e harmonizadas
 │   └── resultados/          # indicadores, comparações e alocações
@@ -49,26 +36,18 @@ Por enquanto, o comando verifica a estrutura de pastas e informa que o pipeline 
 ├── README.md
 └── requirements.txt
 ```
-
-Os dados originais e tratados não devem ser sobrescritos pelo pipeline. Arquivos grandes ou com restrições de redistribuição devem permanecer fora do Git; registrar no projeto a fonte, a consulta, a data de extração e as instruções para obtê-los.
-
+O comando inicial cria as pastas de configuração, documentação e dados na primeira execução. Dados originais ou tratados grandes e com restrição de redistribuição devem ficar fora do Git; registre a fonte, a consulta, a data de extração e como obtê-los.
 ## Dependências
-
 As dependências iniciais estão em `requirements.txt`:
-
 - `pandas`: leitura, transformação e validação de tabelas;
 - `openpyxl`: leitura e escrita de arquivos Excel;
 - `requests`: consultas HTTP a fontes que disponibilizem acesso automatizado.
-
-As versões estão limitadas no arquivo de dependências. A lista deverá ser revisada quando o pipeline for implementado e acompanhada por um arquivo de travamento de versões para reprodução entre máquinas.
-
+As versões estão limitadas no arquivo. A lista deverá ser revisada quando o pipeline for implementado e acompanhada por travamento de versões para facilitar a reprodução entre máquinas.
 ## Fontes e regras pendentes
-
-- Documentar a ponte entre ano-safra e ano civil sem inferir datas ausentes.
-- Definir agregação mensal da PTAX, mês-base do IPCA e regra de deflação.
-- Completar movimentação mensal observada por porto e produto.
+- Documentar a relação entre ano-safra e ano civil sem inferir datas ausentes.
+- Definir a agregação mensal da PTAX, o mês-base do IPCA e a regra de deflação.
+- Completar a movimentação mensal observada por porto e produto.
 - Decidir se o modelo exige cotações mensais de frete por rota.
-- Obter ou definir capacidade portuária, separando valores observados de hipóteses.
+- Obter ou definir capacidade portuária, separando observações de hipóteses.
 - Documentar rotas, componentes, moeda e método para custos hipotéticos.
-
-Até essas decisões serem registradas, o código deverá sinalizar os dados ou métodos pendentes em vez de inventar valores.
+Até essas decisões serem registradas, o código deverá sinalizar dados ou métodos pendentes, sem inventar valores.
