@@ -21,8 +21,11 @@
       <nav class="main-nav" aria-label="Navegação principal">
         <a class="nav-link active" href="#visao-geral">Visão geral</a>
         <a class="nav-link" href="#bases">Bases de dados</a>
-        <a class="nav-link" href="#metodo">Método</a>
+        <a class="nav-link" href="#escopo">Escopo</a>
       </nav>
+      <a class="topbar-institution" href="https://www.undb.edu.br/" target="_blank" rel="noreferrer" aria-label="UNDB Centro Universitário">
+        <img src="assets/undb-logo-header.png" alt="UNDB Centro Universitário" />
+      </a>
       <a class="repo-link" href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">
         <span>Repositório</span><span aria-hidden="true">↗</span>
       </a>
@@ -125,8 +128,54 @@
         </div>
       </section>
 
+      <section class="scope-section" id="escopo">
+        <div class="scope-heading">
+          <div><div class="eyebrow muted-eyebrow">03 / ESCOPO E LIMITES</div><h2>O que cabe no<br /><span class="heading-soft">escopo acadêmico.</span></h2></div>
+          <p>O modelo pode investigar condições e limiares para diversificar a logística da cooperativa. Ele não substitui decisões comerciais nem promete rentabilidade.</p>
+        </div>
+
+        <aside class="scope-status" aria-label="Cobertura e situação do painel">
+          <span class="scope-status-mark" aria-hidden="true">i</span>
+          <p><strong>O que este painel cobre:</strong> o recorte previsto é a exportação brasileira de soja em grão, de 2015 a 2025, e o acompanhamento das bases e métodos do projeto. Há fontes e recortes registrados, mas parte dos dados é parcial. Lucro, HHI, quantidades, alocações e sensibilidades ainda não são resultados calculados: dependem de métodos implementados e conferidos.</p>
+        </aside>
+
+        <div class="scope-columns">
+          <article class="scope-card scope-in">
+            <div class="scope-card-kicker">DENTRO DO ESCOPO</div>
+            <h3>Investigar o problema no modelo</h3>
+            <ul>
+              <li><strong>Preservar a rentabilidade</strong> significa, neste exercício, preservar o lucro total da cooperativa; lucro não é receita nem margem por tonelada.</li>
+              <li>Comparar uma estratégia concentrada e outra diversificada no mesmo cenário, com iguais horizonte, câmbio, choque de mercado e convenções de custo. Destinos, preços negociados, despesas e restrições próprias podem diferir.</li>
+              <li>Calcular lucro, HHI, quantidade e alocação, respeitando disponibilidade, capacidade e demanda máxima dos destinos.</li>
+              <li>Usar derivadas, matrizes, ajuste estatístico e testes de sensibilidade para encontrar condições e limiares em que a mudança é viável no modelo.</li>
+              <li>Coletar e tratar dados públicos, documentar fontes, verificar unidades e avaliar modelos quando exigido pelo enunciado. O uso de dados reais não fica fora do escopo por si só; fontes oficiais de comércio exterior oferecem arquivos detalhados por período, produto, país e outras classificações.</li>
+              <li>Usar dados fictícios para demonstrar os métodos neste guia, sempre identificados como fictícios. Isso não substitui resultados empíricos quando exigidos na entrega.</li>
+            </ul>
+          </article>
+
+          <article class="scope-card scope-out">
+            <div class="scope-card-kicker">FORA DO ESCOPO DELIMITADO</div>
+            <h3>O que o trabalho não comprova nem executa</h3>
+            <ul>
+              <li>Que compradores específicos aceitarão volumes e preços previstos por meio de negociações e contratos efetivos.</li>
+              <li>Avaliações profissionais completas de crédito, exigências comerciais e regulatórias, garantias e condições contratuais.</li>
+              <li>Disponibilidade comercial de navios, armazenagem e terminais confirmada por contratação, nem a operação real da cadeia logística.</li>
+              <li>Implantação e administração de um sistema de produção com responsabilidade operacional, segurança, suporte e decisões comerciais executadas.</li>
+              <li>Mensuração de operações realizadas que isole o efeito da diversificação de preços, câmbio, custos e demais mudanças de mercado.</li>
+              <li>Garantia de preservação da rentabilidade em qualquer situação. O estudo analisa condições e incertezas; não garante resultados futuros.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="scope-criterion">
+          <div class="scope-card-kicker">CRITÉRIO DIDÁTICO DE COMPARAÇÃO</div>
+          <p>Uma alternativa atende à hipótese de preservar o lucro total e reduzir a concentração quando, no mesmo cenário, <strong>HHI diversificada &lt; HHI concentrada</strong> e <strong>lucro diversificada ≥ lucro concentrada</strong>, sem violar restrições.</p>
+          <p>Isso não exige que o lucro seja positivo: duas estratégias podem dar prejuízo, e perder menos não significa ser lucrativo. Se o objetivo for manter margem por tonelada ou aceitar menor lucro em troca de menor risco, é preciso formular outro critério e declarar a concessão. Não atribuir probabilidades aos cenários sem fundamentação.</p>
+        </aside>
+      </section>
+
       <section class="next-section" id="proximos-passos">
-        <div class="next-label"><div class="eyebrow muted-eyebrow">03 / PRÓXIMOS PASSOS</div><h2>O trabalho continua.</h2><p>Estas definições destravam o cálculo, sem impedir que o código e os métodos avancem agora.</p><a href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">Acompanhar no GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="next-label"><div class="eyebrow muted-eyebrow">04 / PRÓXIMOS PASSOS</div><h2>O trabalho continua.</h2><p>Estas definições destravam o cálculo, sem impedir que o código e os métodos avancem agora.</p><a href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">Acompanhar no GitHub <span aria-hidden="true">↗</span></a></div>
         <div class="next-list">
           <div><span>01</span><p>Documentar a ponte entre ano-safra e ano civil</p><b>AGRICULTURA</b></div>
           <div><span>02</span><p>Definir PTAX mensal e mês-base do IPCA</p><b>CÂMBIO</b></div>
