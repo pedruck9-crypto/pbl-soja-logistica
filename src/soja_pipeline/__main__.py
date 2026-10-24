@@ -1,8 +1,8 @@
-"""Verificação inicial da estrutura; cálculos analíticos ainda não implementados."""
+"""Prepara a estrutura inicial; cálculos analíticos ainda não implementados."""
 from pathlib import Path
 def main() -> int:
     root = Path(__file__).resolve().parents[2]
-    required = (
+    folders = (
         "data/originais",
         "data/hipoteses",
         "data/tratados",
@@ -10,11 +10,9 @@ def main() -> int:
         "config",
         "docs",
     )
-    missing = [name for name in required if not (root / name).is_dir()]
-    if missing:
-        print("Pastas ainda não criadas: " + ", ".join(missing))
-        return 1
-    print("Estrutura do projeto verificada.")
+    for name in folders:
+        (root / name).mkdir(parents=True, exist_ok=True)
+    print("Estrutura do projeto verificada e pastas preparadas.")
     print("Pipeline de importação e cálculos ainda não implementado.")
     return 0
 if __name__ == "__main__":
