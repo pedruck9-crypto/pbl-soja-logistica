@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102a24" />
+    <meta name="description" content="Painel de acompanhamento dos dados e métodos do PBL sobre exportação e logística da soja brasileira." />
+    <title>Soja em fluxo | Painel do projeto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Soja em fluxo, início">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>soja<span class="brand-light">em fluxo</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="nav-link active" href="#visao-geral">Visão geral</a>
+        <a class="nav-link" href="#bases">Bases de dados</a>
+        <a class="nav-link" href="#metodo">Método</a>
+      </nav>
+      <a class="repo-link" href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">
+        <span>Repositório</span><span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" id="visao-geral">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> PROJETO PBL · ES02BV</div>
+          <h1>Da origem ao porto.<br /><em>Com os dados à vista.</em></h1>
+          <p class="hero-intro">Uma base organizada para entender a exportação brasileira de soja, acompanhar o que já está disponível e enxergar o que ainda precisa ser definido.</p>
+          <a class="hero-cta" href="#bases">Explorar as bases <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-label="Ilustração abstrata de fluxo logístico da soja">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-route route-one"></div><div class="art-route route-two"></div>
+          <div class="art-node node-origin"><span class="node-icon">✳</span><span class="node-label">ORIGEM</span></div>
+          <div class="art-node node-port"><span class="port-icon"><i></i><i></i><i></i></span><span class="node-label">PORTO</span></div>
+          <div class="art-seed seed-a"></div><div class="art-seed seed-b"></div><div class="art-seed seed-c"></div>
+          <span class="art-caption">FLUXO · BRASIL → MUNDO</span>
+        </div>
+        <div class="hero-footer">
+          <span><span class="live-dot"></span> Painel de preparação de dados</span>
+          <span>Recorte inicial&nbsp; <b>2015 — 2025</b></span>
+        </div>
+      </section>
+
+      <section class="section-block" id="bases">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow muted-eyebrow">01 / INVENTÁRIO</div>
+            <h2>O que já temos <span class="heading-soft">e o que falta.</span></h2>
+          </div>
+          <p class="section-note">Observações e hipóteses aparecem separadas. Nenhum resultado é exibido antes da validação dos métodos.</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="filter-group" role="group" aria-label="Filtrar bases por status">
+            <button class="filter-chip selected" data-filter="all" aria-pressed="true">Todas <span>04</span></button>
+            <button class="filter-chip" data-filter="available" aria-pressed="false">Disponíveis</button>
+            <button class="filter-chip" data-filter="pending" aria-pressed="false">Em aberto</button>
+          </div>
+          <label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Buscar base ou tema</span><input id="search-input" type="search" placeholder="Buscar base ou tema" autocomplete="off" /></label>
+        </div>
+
+        <div class="data-grid" id="data-grid">
+          <article class="data-card card-green" data-status="available" data-search="exportações comex stat comércio exterior ncm destino peso fob">
+            <div class="card-topline"><span class="card-icon icon-export" aria-hidden="true">↗</span><span class="status-pill status-ready"><i></i> BASE IMPORTADA</span></div>
+            <div class="card-kicker">COMÉRCIO EXTERIOR</div>
+            <h3>Exportações</h3>
+            <p>Comex Stat · soja em grão · Brasil</p>
+            <div class="card-stat"><strong>2015—2025</strong><span>mês × país de destino</span></div>
+            <div class="card-detail">Peso líquido e valor FOB preservados. Conferir a vigência histórica da NCM antes de consolidar a série.</div>
+            <div class="card-foot"><span>NCM 12019000</span><span>Fonte oficial <b>↗</b></span></div>
+          </article>
+
+          <article class="data-card card-sand" data-status="available" data-search="agricultura conab safra área produção produtividade uf">
+            <div class="card-topline"><span class="card-icon icon-agro" aria-hidden="true">✳</span><span class="status-pill status-ready"><i></i> SÉRIE IMPORTADA</span></div>
+            <div class="card-kicker">PRODUÇÃO AGRÍCOLA</div>
+            <h3>Área &amp; produção</h3>
+            <p>Conab · soja · Brasil e UFs</p>
+            <div class="card-stat"><strong>Por safra</strong><span>2014/15—2025/26</span></div>
+            <div class="card-detail">Área, produtividade e produção estão separadas. A relação entre ano-safra e ano civil ainda precisa de regra documentada.</div>
+            <div class="card-foot"><span>Ano-safra preservado</span><span>Calendário <b>EM ABERTO</b></span></div>
+          </article>
+
+          <article class="data-card card-blue" data-status="pending" data-search="câmbio ptax diária dólar ibge ipca deflator mensal">
+            <div class="card-topline"><span class="card-icon icon-macro" aria-hidden="true">⌁</span><span class="status-pill status-pending"><i></i> TRATAMENTO PENDENTE</span></div>
+            <div class="card-kicker">CÂMBIO &amp; PREÇOS</div>
+            <h3>PTAX &amp; IPCA</h3>
+            <p>BCB · série diária / IBGE · variação mensal</p>
+            <div class="card-stat"><strong>Dados brutos</strong><span>mensalização por definir</span></div>
+            <div class="card-detail">Falta escolher a agregação da PTAX, o período-base do IPCA, construir o índice e aplicar a deflação.</div>
+            <div class="card-foot"><span>Valores nominais</span><span>Sem cálculo real</span></div>
+          </article>
+
+          <article class="data-card card-lilac" data-status="pending" data-search="portos antaq movimentação capacidade fretes conab rotas logística">
+            <div class="card-topline"><span class="card-icon icon-port" aria-hidden="true">▥</span><span class="status-pill status-partial"><i></i> COBERTURA PARCIAL</span></div>
+            <div class="card-kicker">LOGÍSTICA</div>
+            <h3>Portos &amp; fretes</h3>
+            <p>ANTAQ · movimentação / Conab · rotas</p>
+            <div class="card-stat"><strong>Recortes publicados</strong><span>2025 portos · 2024 fretes</span></div>
+            <div class="card-detail">Faltam séries mensais comparáveis por porto e rota, capacidade com fonte definida e premissas explícitas de custo.</div>
+            <div class="card-foot"><span>Observado ≠ capacidade</span><span>Hipóteses separadas</span></div>
+          </article>
+        </div>
+        <div class="empty-state" id="empty-state" hidden>Nenhuma base corresponde à busca. Tente outro termo ou filtro.</div>
+      </section>
+
+      <section class="method-section" id="metodo">
+        <div class="method-head">
+          <div><div class="eyebrow muted-eyebrow">02 / FLUXO DE TRABALHO</div><h2>Da fonte ao resultado,<br /><span class="heading-soft">sem pular etapas.</span></h2></div>
+          <p>O projeto avança em camadas. Cada número mantém sua origem, unidade e granularidade.</p>
+        </div>
+        <div class="pipeline" aria-label="Etapas do fluxo de dados">
+          <div class="pipeline-step step-done"><div class="step-marker">01<span>✓</span></div><div class="step-content"><span>CAMADA 01</span><h3>Originais</h3><p>Fontes preservadas como foram obtidas.</p></div><span class="step-state">EM ANDAMENTO</span></div>
+          <div class="pipeline-step"><div class="step-marker">02</div><div class="step-content"><span>CAMADA 02</span><h3>Hipóteses</h3><p>Custos e capacidades identificados como estimativas.</p></div><span class="step-state state-open">A DEFINIR</span></div>
+          <div class="pipeline-step"><div class="step-marker">03</div><div class="step-content"><span>CAMADA 03</span><h3>Tratados</h3><p>Unidades, chaves e frequências harmonizadas.</p></div><span class="step-state state-open">A IMPLEMENTAR</span></div>
+          <div class="pipeline-step"><div class="step-marker">04</div><div class="step-content"><span>CAMADA 04</span><h3>Resultados</h3><p>Indicadores e cenários após revisão dos cálculos.</p></div><span class="step-state state-open">A VALIDAR</span></div>
+        </div>
+      </section>
+
+      <section class="next-section" id="proximos-passos">
+        <div class="next-label"><div class="eyebrow muted-eyebrow">03 / PRÓXIMOS PASSOS</div><h2>O trabalho continua.</h2><p>Estas definições destravam o cálculo, sem impedir que o código e os métodos avancem agora.</p><a href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">Acompanhar no GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="next-list">
+          <div><span>01</span><p>Documentar a ponte entre ano-safra e ano civil</p><b>AGRICULTURA</b></div>
+          <div><span>02</span><p>Definir PTAX mensal e mês-base do IPCA</p><b>CÂMBIO</b></div>
+          <div><span>03</span><p>Completar movimentação e capacidade por porto</p><b>PORTOS</b></div>
+          <div><span>04</span><p>Decidir granularidade e premissas de frete</p><b>FRETES</b></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>soja<span class="brand-light">em fluxo</span></span></a><span>Projeto PBL · ES02BV · Brasil, 2015—2025</span><span>Dados e hipóteses permanecem separados.</span></footer>
+  </body>
+</html>
