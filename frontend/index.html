@@ -21,6 +21,7 @@
       <nav class="main-nav" aria-label="Navegação principal">
         <a class="nav-link active" href="#visao-geral">Visão geral</a>
         <a class="nav-link" href="#bases">Bases de dados</a>
+        <a class="nav-link" href="#calculos">Cálculos</a>
         <a class="nav-link" href="#escopo">Escopo</a>
       </nav>
       <a class="repo-link" href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">
@@ -35,6 +36,7 @@
           <h1>Da origem ao porto.<br /><em>Com os dados à vista.</em></h1>
           <p class="hero-intro">Uma base organizada para entender a exportação brasileira de soja, acompanhar o que já está disponível e enxergar o que ainda precisa ser definido.</p>
           <a class="hero-cta" href="#bases">Explorar as bases <span aria-hidden="true">↓</span></a>
+          <a class="hero-cta hero-cta-secondary" href="#calculos">Ver cálculos <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero-art" aria-label="Ilustração abstrata de fluxo logístico da soja">
           <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
@@ -125,9 +127,51 @@
         </div>
       </section>
 
+      <section class="calculation-section" id="calculos">
+        <div class="calculation-heading">
+          <div>
+            <div class="eyebrow muted-eyebrow">03 / CÁLCULOS</div>
+            <h2>Da leitura ao<br /><span class="heading-soft">resultado mensal.</span></h2>
+          </div>
+          <p>O pipeline lê o CSV do Comex Stat e prepara exportações mensais. A saída PDF abaixo é um exemplo separado, enviado pela equipe.</p>
+        </div>
+
+        <div class="calculation-grid">
+          <article class="calculation-card calculation-current">
+            <div class="calc-status"><span></span> CÓDIGO INICIAL CONECTADO</div>
+            <h3>O que o pipeline calcula</h3>
+            <ul>
+              <li>Agrupa valor FOB e peso líquido por ano, mês e NCM.</li>
+              <li>Inclui o país de destino quando a coluna existe na fonte.</li>
+              <li>Converte quilogramas em toneladas e calcula FOB por tonelada.</li>
+              <li>Salva a tabela tratada em CSV sem sobrescrever o original.</li>
+            </ul>
+            <p class="calc-footnote">Ainda não calcula lucro, quantidade ótima, cenários ou alocação por portos. Esses cálculos dependem de dados e premissas adicionais.</p>
+            <a class="calc-button calc-button-secondary" href="#bases">Voltar às bases de dados <span aria-hidden="true">↑</span></a>
+          </article>
+
+          <aside class="calculation-card calculation-warning">
+            <div class="example-badge">EXEMPLO · NÃO VALIDADO</div>
+            <h3>Sobre o PDF da equipe</h3>
+            <p>O arquivo apresenta uma tabela anual com preço FOB, quantidade ótima, receita, custo e lucro. Ele ajuda a visualizar um formato possível de saída, mas não foi gerado pelo pipeline atual.</p>
+            <p>O PDF não informa as fontes dos preços nem todos os parâmetros e fórmulas necessários para reproduzir os valores. Trate os números como ilustrativos, não como resultados oficiais do projeto.</p>
+            <a class="calc-button" href="assets/resultado-calculo.pdf" target="_blank" rel="noreferrer">Abrir exemplo em PDF <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
+
+        <div class="pdf-preview-card">
+          <div class="pdf-preview-heading">
+            <div><span class="pdf-label">ARQUIVO DE REFERÊNCIA</span><h3>Exemplo de saída dos cálculos</h3></div>
+            <a href="assets/resultado-calculo.pdf" target="_blank" rel="noreferrer">Abrir em nova aba ↗</a>
+          </div>
+          <iframe src="assets/resultado-calculo.pdf" title="Prévia do PDF de exemplo de saída dos cálculos" loading="lazy"></iframe>
+          <p>Prévia do arquivo enviado pela equipe. A inclusão no painel não confirma a origem nem a validade dos valores.</p>
+        </div>
+      </section>
+
       <section class="scope-section" id="escopo">
         <div class="scope-heading">
-          <div><div class="eyebrow muted-eyebrow">03 / ESCOPO E LIMITES</div><h2>O que cabe no<br /><span class="heading-soft">escopo acadêmico.</span></h2></div>
+          <div><div class="eyebrow muted-eyebrow">04 / ESCOPO E LIMITES</div><h2>O que cabe no<br /><span class="heading-soft">escopo acadêmico.</span></h2></div>
           <p>O modelo pode investigar condições e limiares para diversificar a logística da cooperativa. Ele não substitui decisões comerciais nem promete rentabilidade.</p>
         </div>
 
@@ -172,7 +216,7 @@
       </section>
 
       <section class="next-section" id="proximos-passos">
-        <div class="next-label"><div class="eyebrow muted-eyebrow">04 / PRÓXIMOS PASSOS</div><h2>O trabalho continua.</h2><p>Estas definições destravam o cálculo, sem impedir que o código e os métodos avancem agora.</p><a href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">Acompanhar no GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="next-label"><div class="eyebrow muted-eyebrow">05 / PRÓXIMOS PASSOS</div><h2>O trabalho continua.</h2><p>Estas definições destravam o cálculo, sem impedir que o código e os métodos avancem agora.</p><a href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">Acompanhar no GitHub <span aria-hidden="true">↗</span></a></div>
         <div class="next-list">
           <div><span>01</span><p>Documentar a ponte entre ano-safra e ano civil</p><b>AGRICULTURA</b></div>
           <div><span>02</span><p>Definir PTAX mensal e mês-base do IPCA</p><b>CÂMBIO</b></div>
