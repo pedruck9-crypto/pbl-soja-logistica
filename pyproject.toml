@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pbl-soja-logistica"
+version = "0.1.0"
+description = "Pipeline reproduzível de análise de exportação e logística da soja"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2,<3.0",
+    "openpyxl>=3.1,<4.0",
+    "requests>=2.32,<3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
