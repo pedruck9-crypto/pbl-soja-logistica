@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102a24" />
+    <meta name="description" content="Resultados preliminares, métodos e documentos técnicos do PBL Soja sob Pressão." />
+    <title>Resultados e metodologia | Soja em fluxo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="resultados-metodologia.css" />
+    <script src="resultados-metodologia.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar results-topbar">
+      <a class="brand" href="index.html" aria-label="Soja em fluxo, voltar ao painel">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>soja<span class="brand-light">em fluxo</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação da página">
+        <a class="nav-link" href="#dashboard">Dashboard</a>
+        <a class="nav-link" href="#oferta-demanda">Oferta e demanda</a>
+        <a class="nav-link" href="#cenarios">Cenários</a>
+        <a class="nav-link" href="#metodologia">Metodologia</a>
+        <a class="nav-link" href="#documentos">Documentos</a>
+      </nav>
+      <a class="repo-link" href="index.html"><span>Voltar ao painel</span><span aria-hidden="true">←</span></a>
+    </header>
+
+    <main>
+      <section class="results-hero">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> RESULTADOS EM CONSTRUÇÃO · 2015—2025</div>
+          <h1>Resultados claros.<br /><em>Métodos rastreáveis.</em></h1>
+          <p>Esta área reúne cálculos, hipóteses e documentos produzidos pela equipe. Cada item informa o nível de validação para que exemplos didáticos não sejam confundidos com resultados empíricos concluídos.</p>
+          <a class="hero-cta" href="#dashboard">Explorar o dashboard <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="validation-key" aria-label="Legenda dos níveis de validação">
+          <h2>Níveis de validação</h2>
+          <p><span class="status status-preliminary">Preliminar</span> calculado, mas depende de fonte ou convenção a confirmar.</p>
+          <p><span class="status status-hypothetical">Hipotético</span> demonstra o método com parâmetros ilustrativos.</p>
+          <p><span class="status status-pending">Pendente</span> fórmula definida, sem base real completa.</p>
+        </aside>
+      </section>
+
+      <section class="results-section" id="dashboard">
+        <div class="results-heading">
+          <div><span class="section-index">01 / DASHBOARD PRELIMINAR</span><h2>O que já pode ser<br /><em>interpretado com cautela.</em></h2></div>
+          <p>Os números abaixo ajudam a orientar o trabalho. A versão final dependerá da confirmação das séries da Conab, Comex Stat, BLS e ANTAQ.</p>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card"><span class="status status-preliminary">Preliminar</span><strong>+1,85%</strong><h3>Produtividade da terra</h3><p>Crescimento médio anual indicado entre 2015 e 2025, sujeito à confirmação da série agrícola.</p></article>
+          <article class="metric-card"><span class="status status-preliminary">Preliminar</span><strong>−2,65%</strong><h3>Preço real</h3><p>Variação anual estimada após deflação pelo CPI-U, com base 2025 ainda estimada.</p></article>
+          <article class="metric-card"><span class="status status-preliminary">Preliminar</span><strong>120,6</strong><h3>Índice parcial de eficiência</h3><p>Base 2015 = 100. Considera apenas a terra como insumo e não representa uma PTF completa.</p></article>
+          <article class="metric-card"><span class="status status-hypothetical">Hipotético</span><strong>125 kg/ha</strong><h3>Dose econômica ilustrativa</h3><p>Resultado de uma função didática de fertilizante que ainda precisa de calibração agronômica.</p></article>
+        </div>
+
+        <div class="optimization-panel" id="lucro-otimo">
+          <div>
+            <span class="status status-preliminary">Modelo didático</span>
+            <h3>Calculadora de lucro ótimo</h3>
+            <p>Altere o preço FOB para observar o comportamento da função de custo fornecida pelo PBL. A simulação não incorpora capacidade, contratos, fretes, custos portuários ou validação dos preços históricos.</p>
+          </div>
+          <div class="profit-simulator">
+            <label for="price-range">Preço FOB <strong id="price-output">US$ 400/t</strong></label>
+            <input id="price-range" type="range" min="150" max="650" step="5" value="400" />
+            <div class="simulator-grid" aria-live="polite">
+              <span>Quantidade ótima <strong id="quantity-output">183.333 t</strong></span>
+              <span>Receita <strong id="revenue-output">US$ 73,33 mi</strong></span>
+              <span>Custo <strong id="cost-output">US$ 58,17 mi</strong></span>
+              <span>Lucro teórico <strong id="profit-output">US$ 15,17 mi</strong></span>
+            </div>
+            <div class="formula" aria-label="Quantidade ótima em função do preço">q*(P) = máx(0, (P − 180) / 0,0012)</div>
+          </div>
+          <a class="document-link" href="assets/documentos/Resultado-Calculos.pdf" target="_blank" rel="noreferrer">Abrir documentação do cálculo <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="models-section" id="oferta-demanda">
+        <div class="results-heading">
+          <div><span class="section-index">02 / OFERTA E DEMANDA</span><h2>Estrutura pronta.<br /><em>Estimação ainda pendente.</em></h2></div>
+          <p>As retas abaixo vêm de três observações hipotéticas usadas para demonstrar o ajuste linear. Elas não representam a oferta ou a demanda empírica da soja brasileira.</p>
+        </div>
+        <div class="model-grid">
+          <article class="model-card demand-card">
+            <span class="status status-hypothetical">Hipotético</span>
+            <h3>Demanda ilustrativa</h3>
+            <div class="model-formula">Q<sub>d</sub> = 150 − 0,1P</div>
+            <p>A inclinação negativa demonstra que a quantidade demandada diminui quando o preço aumenta. Os coeficientes precisam ser reestimados com a série observada.</p>
+          </article>
+          <div class="model-chart" role="img" aria-label="Gráfico ilustrativo com curvas lineares de oferta e demanda encontrando-se em preço 400 e quantidade 110">
+            <svg viewBox="0 0 420 250" aria-hidden="true">
+              <line class="axis" x1="48" y1="15" x2="48" y2="214"></line><line class="axis" x1="48" y1="214" x2="402" y2="214"></line>
+              <line class="demand-line" x1="76" y1="55" x2="372" y2="180"></line><line class="supply-line" x1="76" y1="190" x2="372" y2="44"></line>
+              <circle cx="229" cy="120" r="6"></circle><text x="242" y="115">Equilíbrio ilustrativo</text><text x="242" y="132">P = 400 · Q = 110</text>
+              <text x="12" y="26">P</text><text x="388" y="235">Q</text><text class="line-label" x="83" y="48">Demanda</text><text class="line-label" x="309" y="42">Oferta</text>
+            </svg>
+          </div>
+          <article class="model-card supply-card">
+            <span class="status status-hypothetical">Hipotético</span>
+            <h3>Oferta ilustrativa</h3>
+            <div class="model-formula">Q<sub>s</sub> = 30 + 0,2P</div>
+            <p>A inclinação positiva demonstra a resposta da quantidade ofertada ao preço. Ainda faltam escolha econométrica, testes e validação dos resíduos.</p>
+          </article>
+        </div>
+        <aside class="model-gap"><strong>Para transformar em resultado empírico</strong><span>Usar preço e quantidade mensais do Comex Stat, documentar a identificação econômica, estimar coeficientes e apresentar R², significância, resíduos e testes de robustez.</span></aside>
+      </section>
+
+      <section class="scenarios-section" id="cenarios">
+        <div class="results-heading light-heading">
+          <div><span class="section-index">03 / STRESS TESTS</span><h2>Três choques definidos.<br /><em>Resultados ainda não calculados.</em></h2></div>
+          <p>Os cartões registram os cenários exigidos pelo PBL e as variáveis que deverão ser recalculadas sob a mesma linha de base.</p>
+        </div>
+        <div class="scenario-grid">
+          <article><div class="scenario-top"><span>01</span><span class="status status-pending">Pendente</span></div><h3>China compra 10 Mt a menos</h3><p>Recalcular preço e quantidade de equilíbrio, lucro ótimo, HHI e redistribuição para outros destinos.</p><small>Falta: modelo de demanda por destino e limites de absorção dos mercados alternativos.</small></article>
+          <article><div class="scenario-top"><span>02</span><span class="status status-pending">Pendente</span></div><h3>Dólar perde 15% frente ao real</h3><p>Recalcular receita e custos convertidos, lucro ótimo e valor real por hectare com uma convenção cambial única.</p><small>Falta: PTAX de referência, exposição dos custos ao câmbio e regra de conversão.</small></article>
+          <article><div class="scenario-top"><span>03</span><span class="status status-pending">Pendente</span></div><h3>Itaqui fica 20% mais caro</h3><p>Recalcular custo logístico, lucro e alocação entre portos respeitando capacidades e rotas disponíveis.</p><small>Falta: matriz de rotas, custos, capacidades e volumes máximos por porto.</small></article>
+        </div>
+        <div class="scenario-output"><strong>Saídas comuns esperadas</strong><span>Preço de equilíbrio</span><span>Quantidade</span><span>Lucro ótimo</span><span>Produtividade por hectare</span><span>HHI</span><span>Alocação portuária</span></div>
+      </section>
+
+      <section class="methodology-section" id="metodologia">
+        <div class="results-heading light-heading">
+          <div><span class="section-index">04 / METODOLOGIA</span><h2>Como os indicadores<br /><em>foram construídos.</em></h2></div>
+          <p>As etapas preservam a separação entre dados observados, transformações e hipóteses internas.</p>
+        </div>
+        <div class="methodology-grid">
+          <article><span>01</span><h3>Alinhamento temporal</h3><p>A exportação do ano civil t é pareada, como convenção documentada, à safra t−1/t colhida no início daquele ano.</p></article>
+          <article><span>02</span><h3>Produtividade e valor</h3><p>Produtividade = produção ÷ área. Valor por hectare = produtividade × preço FOB implícito.</p></article>
+          <article><span>03</span><h3>Deflação</h3><p>Valores nominais são convertidos para dólares de 2025 por meio do CPI-U médio anual.</p></article>
+          <article><span>04</span><h3>Eficiência produtiva</h3><p>O índice atual compara produção e área. Fertilizantes, trabalho, máquinas e demais insumos ainda precisam ser incorporados.</p></article>
+          <article><span>05</span><h3>Otimização</h3><p>O lucro é maximizado quando receita marginal e custo marginal se igualam, respeitando o shutdown point.</p></article>
+          <article><span>06</span><h3>Logística portuária</h3><p>Produtividade logística e ocupação do berço têm fórmulas definidas, mas os dados reais de Itaqui continuam pendentes.</p></article>
+        </div>
+      </section>
+
+      <section class="documents-section" id="documentos">
+        <div class="results-heading">
+          <div><span class="section-index">05 / DOCUMENTOS</span><h2>Memória técnica<br /><em>da equipe.</em></h2></div>
+          <p>Os PDFs preservam as fórmulas, premissas, exemplos e lacunas declaradas por cada frente.</p>
+        </div>
+        <div class="document-list">
+          <a href="assets/documentos/ST4.1_Preparar_dados_agricolas.pdf" target="_blank" rel="noreferrer"><span>ST4.1</span><strong>Preparar dados agrícolas</strong><small>Base e alinhamento temporal</small><b>↗</b></a>
+          <a href="assets/documentos/ST4.2_Produtividade_e_valor_bruto.pdf" target="_blank" rel="noreferrer"><span>ST4.2</span><strong>Produtividade e valor bruto</strong><small>t/ha e US$/ha</small><b>↗</b></a>
+          <a href="assets/documentos/ST4.3_Aplicar_deflacao.pdf" target="_blank" rel="noreferrer"><span>ST4.3</span><strong>Aplicar deflação</strong><small>Dólares constantes de 2025</small><b>↗</b></a>
+          <a href="assets/documentos/ST4.4_Construir_PTF.pdf" target="_blank" rel="noreferrer"><span>ST4.4</span><strong>Construir índice de eficiência</strong><small>PTF parcial baseada em terra</small><b>↗</b></a>
+          <a href="assets/documentos/ST4.5_Produtividade_marginal.pdf" target="_blank" rel="noreferrer"><span>ST4.5</span><strong>Produtividade marginal</strong><small>Simulação de fertilizante</small><b>↗</b></a>
+          <a href="assets/documentos/ST4.6_Indicadores_portuarios.pdf" target="_blank" rel="noreferrer"><span>ST4.6</span><strong>Indicadores portuários</strong><small>Método e exemplo hipotético</small><b>↗</b></a>
+          <a href="assets/documentos/Resultado-Calculos.pdf" target="_blank" rel="noreferrer"><span>OTM</span><strong>Otimização econômica</strong><small>Quantidade, receita, custo e lucro</small><b>↗</b></a>
+        </div>
+        <aside class="data-warning"><strong>Aviso de validação</strong><p>Os documentos contêm valores preliminares e hipóteses. Antes da entrega final, confirme as fontes primárias, registre as datas de consulta e substitua exemplos hipotéticos por dados observados quando o enunciado exigir.</p></aside>
+      </section>
+    </main>
+
+    <footer class="results-footer"><span>Soja em fluxo · Resultados e metodologia</span><a href="index.html">Voltar ao painel principal →</a></footer>
+  </body>
+</html>
