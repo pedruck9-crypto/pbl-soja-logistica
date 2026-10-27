@@ -63,3 +63,34 @@ O código ainda não calcula produtividade, câmbio/deflator, lucro, cenários o
 - Obter ou definir capacidade portuária, separando observações de hipóteses.
 - Documentar rotas, componentes, moeda e método para custos hipotéticos.
 Até essas decisões serem registradas, o código deverá sinalizar dados ou métodos pendentes, sem inventar valores.
+
+## Resumo do PBL
+
+Para a versão pública de portfólio, o repositório utiliza um [resumo autoral do problema](docs/RESUMO_PBL.md). O enunciado institucional original não é redistribuído neste projeto.
+
+## Créditos
+
+Projeto acadêmico desenvolvido em equipe:
+
+- Pedro Lucas Rolim — sistema reproduzível, dashboard e integração do site;
+- Caio Rafael Tavares da Silva — indicadores de produtividade e documentação metodológica;
+- José Guilherme Paes Rodrigues — modelos matemáticos de oferta e demanda;
+- João Guilherme — distribuição logística e alocação portuária;
+- Luís Felipe — pitch de dez minutos;
+- Caio Henrique — apoio transversal como coringa da equipe.
+
+O catálogo de documentos registra as [fontes e frentes técnicas responsáveis](frontend/assets/documentos/README.md).
+
+## Licença e uso dos materiais
+
+O código-fonte original deste repositório é disponibilizado sob a [Licença MIT](LICENSE), mediante concordância dos respectivos autores.
+
+A licença MIT não abrange:
+
+- nomes, marcas, logotipos ou identidade visual de instituições;
+- o enunciado original do PBL ou materiais fornecidos pela instituição e pela professora;
+- PDFs, apresentações e demais documentos acadêmicos, salvo indicação expressa;
+- dados públicos ou privados, que permanecem sujeitos aos termos das fontes originais;
+- contribuições de terceiros que possuam licença ou autorização própria.
+
+O projeto é uma produção acadêmica independente e não constitui página oficial, recomendação comercial ou representação institucional. Para reutilizar materiais excluídos da MIT, consulte o respectivo titular dos direitos.
