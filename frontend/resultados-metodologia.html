@@ -23,6 +23,7 @@
         <a class="nav-link" href="#dashboard">Dashboard</a>
         <a class="nav-link" href="#oferta-demanda">Oferta e demanda</a>
         <a class="nav-link" href="#cenarios">Cenários</a>
+        <a class="nav-link" href="#logistica">Logística</a>
         <a class="nav-link" href="#metodologia">Metodologia</a>
         <a class="nav-link" href="#documentos">Documentos</a>
       </nav>
@@ -121,9 +122,80 @@
         <div class="scenario-output"><strong>Saídas comuns esperadas</strong><span>Preço de equilíbrio</span><span>Quantidade</span><span>Lucro ótimo</span><span>Produtividade por hectare</span><span>HHI</span><span>Alocação portuária</span></div>
       </section>
 
+      <section class="logistics-section" id="logistica">
+        <div class="results-heading">
+          <div><span class="section-index">04 / MODELO LOGÍSTICO</span><h2>Da região produtora<br /><em>ao mercado internacional.</em></h2></div>
+          <p>A rede e a formulação matemática estão definidas. Custos, capacidades, oferta exportável e demanda ainda precisam ser completados antes da solução numérica final.</p>
+        </div>
+
+        <aside class="logistics-notice"><span class="status status-preliminary">Estrutura definida</span><strong>O documento organiza o método, não uma alocação ótima concluída.</strong><p>Referências históricas, parâmetros do modelo e hipóteses de cenário permanecem identificados separadamente.</p></aside>
+
+        <div class="network-flow" aria-label="Rede logística selecionada para o modelo">
+          <article><span>01 / ORIGENS</span><h3>Mato Grosso<br />Paraná<br />Goiás<br />Rio Grande do Sul</h3><p>A disponibilidade exportável será menor ou igual à produção e ainda precisa ser calculada.</p></article>
+          <div class="network-arrow" aria-hidden="true">→</div>
+          <article><span>02 / PORTOS</span><h3>Santos<br />Paranaguá<br />Rio Grande<br />Itaqui</h3><p>Itaqui participa do cenário de aumento de custos. Rotas inviáveis devem ser bloqueadas.</p></article>
+          <div class="network-arrow" aria-hidden="true">→</div>
+          <article><span>03 / DESTINOS</span><h3>China<br />Espanha<br />Países Baixos</h3><p>Volumes históricos orientam a análise, mas não equivalem a limites futuros de demanda.</p></article>
+        </div>
+
+        <div class="logistics-split">
+          <div class="logistics-card">
+            <div class="card-heading"><div><span>REFERÊNCIA HISTÓRICA</span><h3>Produção estadual em 2025</h3></div><small>Dados atribuídos à PAM/IBGE</small></div>
+            <div class="bar-list">
+              <div><span>Mato Grosso</span><i style="--bar:100%"></i><strong>50,18 Mt</strong></div>
+              <div><span>Paraná</span><i style="--bar:42.4%"></i><strong>21,29 Mt</strong></div>
+              <div><span>Goiás</span><i style="--bar:40.5%"></i><strong>20,30 Mt</strong></div>
+              <div><span>Rio Grande do Sul</span><i style="--bar:27.2%"></i><strong>13,66 Mt</strong></div>
+            </div>
+            <p class="card-note">Produção não é oferta exportável. É necessário descontar processamento, consumo interno, estoques e compromissos sem dupla contagem.</p>
+          </div>
+          <div class="logistics-card">
+            <div class="card-heading"><div><span>REFERÊNCIA HISTÓRICA</span><h3>Participação portuária em 2024</h3></div><small>Conab, Anuário Agrologístico 2025</small></div>
+            <div class="port-share-grid"><div><strong>36,7%</strong><span>Santos</span></div><div><strong>18,3%</strong><span>Itaqui</span></div><div><strong>18,0%</strong><span>Paranaguá</span></div><div><strong>14,2%</strong><span>Rio Grande</span></div><div><strong>12,7%</strong><span>Barcarena</span></div></div>
+            <p class="card-note">Participação observada não representa capacidade máxima nem alocação ótima da cooperativa.</p>
+          </div>
+        </div>
+
+        <div class="freight-block">
+          <div class="card-heading"><div><span>CUSTOS PARCIAIS</span><h3>Fretes de referência</h3></div><span class="status status-preliminary">Preliminar</span></div>
+          <div class="freight-table-wrap"><table class="freight-table"><thead><tr><th>Rota</th><th>Distância</th><th>Frete médio</th><th>Uso no modelo</th></tr></thead><tbody><tr><td>Sorriso (MT) → Santos (SP)</td><td>2.287 km</td><td>R$ 455,83/t</td><td>Referência de corredor específico</td></tr><tr><td>Rondonópolis (MT) → Santos (SP)</td><td>1.632 km</td><td>R$ 350,83/t</td><td>Referência de corredor específico</td></tr><tr><td>Rio Verde (GO) → Paranaguá (PR)</td><td>Não informado</td><td>≈ R$ 246,03/t</td><td>Média dos 12 valores mensais</td></tr></tbody></table></div>
+          <p class="card-note">As tarifas ausentes não serão preenchidas com estimativas sem identificação. A matriz completa deverá manter moeda, período e escopo equivalentes.</p>
+        </div>
+
+        <div class="model-definition">
+          <div class="objective-card"><span class="status status-pending">Solução pendente</span><h3>Função objetivo</h3><div class="objective-formula">min Z = ΣᵢΣⱼ cᵢⱼxᵢⱼ + ΣⱼΣₖ hⱼₖyⱼₖ</div><p>Minimizar o custo terrestre, portuário e de exportação. <b>xᵢⱼ</b> representa o fluxo da origem ao porto e <b>yⱼₖ</b>, o fluxo do porto ao destino.</p></div>
+          <div class="constraint-grid">
+            <article><strong>Disponibilidade</strong><span>Σⱼ xᵢⱼ ≤ Sᵢ</span><p>A saída não supera a oferta exportável.</p></article>
+            <article><strong>Conservação de massa</strong><span>Σᵢ xᵢⱼ = Σₖ yⱼₖ</span><p>Entradas e saídas do porto são iguais.</p></article>
+            <article><strong>Capacidade portuária</strong><span>Σᵢ xᵢⱼ ≤ Pⱼ</span><p>O volume respeita o limite disponível.</p></article>
+            <article><strong>Demanda</strong><span>Σⱼ yⱼₖ ≤ Dₖ</span><p>O destino não recebe acima do limite.</p></article>
+          </div>
+        </div>
+
+        <div class="validation-panel">
+          <div><span>VALIDAÇÃO DA SOLUÇÃO</span><h3>Sete verificações antes de publicar resultados</h3><p>O custo deve ser recalculado de forma independente e comparado ao resultado do solver dentro da tolerância numérica.</p></div>
+          <ol><li>Disponibilidade por origem</li><li>Conservação de massa</li><li>Capacidade portuária</li><li>Demanda por destino</li><li>Não negatividade</li><li>Rotas permitidas</li><li>Custo total conferido</li></ol>
+        </div>
+
+        <div class="logistics-scenarios">
+          <div class="card-heading"><div><span>COMPARAÇÃO OPERACIONAL</span><h3>Plano sem adaptação × plano reotimizado</h3></div><small>Efeitos conceituais; resultados quantitativos pendentes</small></div>
+          <div class="comparison-grid"><article><b>China −10 Mt</b><p>O plano original pode exceder a nova demanda. A reotimização procura destinos alternativos, respeitando absorção e capacidade.</p></article><article><b>Dólar −15%</b><p>A receita convertida em reais diminui se o preço em dólares permanecer constante. Custos domésticos não caem automaticamente.</p></article><article><b>Itaqui +20%</b><p>O plano adaptado pode reduzir o uso de Itaqui caso existam rotas alternativas viáveis e mais econômicas.</p></article></div>
+        </div>
+
+        <div class="diversification-panel">
+          <div><span>CONCENTRAÇÃO COMERCIAL</span><h3>Lucro e HHI devem ser lidos em conjunto</h3><p>A estratégia diversificada só atende ao critério acadêmico quando reduz a concentração, mantém o lucro total e respeita todas as restrições.</p></div>
+          <div class="hhi-formula">HHI = Σₖ sₖ²<small>Quanto menor, mais distribuídas estão as vendas entre destinos.</small></div>
+        </div>
+
+        <div class="model-status">
+          <div class="card-heading"><div><span>SITUAÇÃO ATUAL</span><h3>O que está pronto e o que falta</h3></div><a href="assets/documentos/modelo_distribuicao_logistica_soja.pdf" target="_blank" rel="noreferrer">Abrir relatório completo ↗</a></div>
+          <div class="status-grid"><article><span class="status status-preliminary">Definido</span><h4>Rede e formulação</h4><p>Origens, portos, destinos, objetivo e restrições documentados.</p></article><article><span class="status status-preliminary">Parcial</span><h4>Custos e demanda</h4><p>Há referências históricas, mas as matrizes ainda estão incompletas.</p></article><article><span class="status status-pending">Pendente</span><h4>Oferta e capacidades</h4><p>Disponibilidade exportável e limites portuários precisam de fonte e período.</p></article><article><span class="status status-pending">Pendente</span><h4>Solução e cenários</h4><p>Fluxos ótimos, custos, lucro e HHI dependem da execução com parâmetros completos.</p></article></div>
+        </div>
+      </section>
+
       <section class="methodology-section" id="metodologia">
         <div class="results-heading light-heading">
-          <div><span class="section-index">04 / METODOLOGIA</span><h2>Como os indicadores<br /><em>foram construídos.</em></h2></div>
+          <div><span class="section-index">05 / METODOLOGIA</span><h2>Como os indicadores<br /><em>foram construídos.</em></h2></div>
           <p>As etapas preservam a separação entre dados observados, transformações e hipóteses internas.</p>
         </div>
         <div class="methodology-grid">
@@ -138,7 +210,7 @@
 
       <section class="documents-section" id="documentos">
         <div class="results-heading">
-          <div><span class="section-index">05 / DOCUMENTOS</span><h2>Memória técnica<br /><em>da equipe.</em></h2></div>
+          <div><span class="section-index">06 / DOCUMENTOS</span><h2>Memória técnica<br /><em>da equipe.</em></h2></div>
           <p>Os PDFs preservam as fórmulas, premissas, exemplos e lacunas declaradas por cada frente.</p>
         </div>
         <div class="document-list">
@@ -149,6 +221,7 @@
           <a href="assets/documentos/ST4.5_Produtividade_marginal.pdf" target="_blank" rel="noreferrer"><span>ST4.5</span><strong>Produtividade marginal</strong><small>Simulação de fertilizante</small><b>↗</b></a>
           <a href="assets/documentos/ST4.6_Indicadores_portuarios.pdf" target="_blank" rel="noreferrer"><span>ST4.6</span><strong>Indicadores portuários</strong><small>Método e exemplo hipotético</small><b>↗</b></a>
           <a href="assets/documentos/Resultado-Calculos.pdf" target="_blank" rel="noreferrer"><span>OTM</span><strong>Otimização econômica</strong><small>Quantidade, receita, custo e lucro</small><b>↗</b></a>
+          <a href="assets/documentos/modelo_distribuicao_logistica_soja.pdf" target="_blank" rel="noreferrer"><span>ST5</span><strong>Modelo de distribuição logística</strong><small>Rede, restrições, cenários e diversificação</small><b>↗</b></a>
         </div>
         <aside class="data-warning"><strong>Aviso de validação</strong><p>Os documentos contêm valores preliminares e hipóteses. Antes da entrega final, confirme as fontes primárias, registre as datas de consulta e substitua exemplos hipotéticos por dados observados quando o enunciado exigir.</p></aside>
       </section>
