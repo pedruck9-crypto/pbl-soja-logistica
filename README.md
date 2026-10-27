@@ -90,6 +90,10 @@ Entre as entregas verificáveis no repositório estão o site estático publicad
 
 O catálogo de documentos registra as [fontes e frentes técnicas responsáveis](frontend/assets/documentos/README.md).
 
+## Contribuições
+
+Correções e melhorias futuras são bem-vindas. Consulte o guia [Como contribuir](CONTRIBUTING.md) antes de enviar código, dados ou documentos.
+
 ## Licença e uso dos materiais
 
 O código-fonte original deste repositório é disponibilizado sob a [Licença MIT](LICENSE), mediante concordância dos respectivos autores.
