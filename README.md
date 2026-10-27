@@ -79,6 +79,15 @@ Projeto acadêmico desenvolvido em equipe:
 - Luís Felipe — pitch de dez minutos;
 - Caio Henrique — apoio transversal como coringa da equipe.
 
+### Contribuição de Pedro Lucas Rolim
+
+Conforme a divisão de trabalho registrada no Jira, Pedro assumiu duas frentes principais:
+
+- **EBDPDDDMPN-7 — Sistema reproduzível em código:** organização do repositório, preparação do ambiente, estrutura do pacote Python, leitura das bases e evolução do pipeline de transformações. As etapas de organização do projeto e preparação do ambiente constam como concluídas; transformações, qualidade de dados, integração progressiva e verificação integral da reprodução continuam em desenvolvimento.
+- **EBDPDDDMPN-12 — Dashboard de resultados:** definição dos indicadores, planejamento das visualizações, implementação do front-end e integração das páginas de metodologia, resultados, documentos e créditos. A conexão com resultados finais depende da validação dos modelos e das bases da equipe.
+
+Entre as entregas verificáveis no repositório estão o site estático publicado, a estrutura instalável em Python, os módulos iniciais de dados e cálculos, o catálogo de documentos e as interfaces que distinguem resultados preliminares, hipóteses e pendências.
+
 O catálogo de documentos registra as [fontes e frentes técnicas responsáveis](frontend/assets/documentos/README.md).
 
 ## Licença e uso dos materiais
