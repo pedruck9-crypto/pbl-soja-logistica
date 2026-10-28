@@ -1,65 +1,174 @@
-# PBL: exportação e logística da soja brasileira
-## Objetivo
-Organizar um fluxo reproduzível para analisar exportações brasileiras de soja em grão, relacionando dados agrícolas, câmbio, portos, fretes e cenários logísticos. O projeto deve preservar os dados originais, documentar fontes e hipóteses e gerar bases tratadas e resultados reproduzíveis.
-## Situação atual
-O repositório inclui leitura inicial de CSV do Comex Stat e agregação mensal de peso líquido e valor FOB. Câmbio/deflator, agricultura, lucro, comparação de cenários e alocação por portos continuam pendentes até que as fontes e convenções correspondentes sejam definidas.
-## Como instalar
-Requisito: Python 3.11 ou superior.
+# Soja em Fluxo
+
+Projeto acadêmico de dados e logística para analisar exportações brasileiras de soja em grão, organizar fontes heterogêneas e preparar comparações de cenários, rentabilidade e alocação portuária.
+
+[Acessar o site publicado](https://pbl-soja-logistica-frontend.vercel.app/) · [Ver resultados e metodologia](https://pbl-soja-logistica-frontend.vercel.app/resultados-metodologia.html) · [Ler o resumo do PBL](docs/RESUMO_PBL.md)
+
+## Visão rápida
+
+| Aspecto | Descrição |
+|---|---|
+| Problema | Organizar dados de exportação, agricultura, câmbio e logística para estudar diversificação de destinos e portos |
+| Minha atuação | Sistema reproduzível em Python, dashboard, integração do site, documentação e publicação web |
+| Tecnologias | Python, Pandas, HTML, CSS, JavaScript, GitHub e Vercel |
+| Entrega atual | Site navegável, pacote Python instalável, leitura de CSV e agregação mensal inicial do Comex Stat |
+| Estado | Protótipo acadêmico em evolução; resultados finais ainda dependem da validação de fontes e modelos |
+
+## O que este projeto demonstra
+
+- organização de um pipeline de dados com separação entre originais, hipóteses, bases tratadas e resultados;
+- tratamento de tabelas com Pandas, preservando códigos e unidades;
+- conversão de peso líquido para toneladas e cálculo do preço FOB implícito;
+- documentação de fontes, premissas, limitações e campos de ligação;
+- construção de uma interface responsiva para comunicar metodologia e resultados;
+- trabalho em equipe com Jira, branches, commits e pull requests;
+- publicação contínua do front-end pela Vercel.
+
+## Minha contribuição — Pedro Lucas Rolim
+
+Conforme a divisão de trabalho registrada no Jira, assumi duas frentes principais.
+
+### Sistema reproduzível em código — EBDPDDDMPN-7
+
+- organização do repositório e preparação do ambiente Python;
+- estrutura do pacote `soja_pipeline`;
+- leitura das bases tabulares e transformações iniciais;
+- integração progressiva entre dados, cálculos e saídas;
+- documentação para reprodução do projeto.
+
+As etapas de organização e ambiente constam como concluídas. Qualidade de dados, integração completa e verificação integral da reprodução continuam em desenvolvimento.
+
+### Dashboard de resultados — EBDPDDDMPN-12
+
+- planejamento da visualização e arquitetura das páginas;
+- desenvolvimento do front-end responsivo;
+- integração das áreas de metodologia, resultados, documentos e créditos;
+- diferenciação visual entre resultados preliminares, hipóteses e pendências;
+- publicação do site e organização da versão para portfólio.
+
+A conexão com os resultados finais depende da validação dos modelos e das bases produzidas pelas demais frentes da equipe.
+
+## Arquitetura
+
+```text
+Fontes públicas
+      ↓
+data/originais
+      ↓  leitura e validação
+src/soja_pipeline
+      ↓  transformações e cálculos
+data/tratados → data/resultados
+      ↓
+frontend → publicação na Vercel
+```
+
+O fluxo preserva os arquivos originais e mantém hipóteses separadas dos dados observados. Essa decisão reduz o risco de apresentar capacidade, custos ou cenários fictícios como informação oficial.
+
+## Situação das entregas
+
+| Entrega | Situação |
+|---|---|
+| Estrutura do repositório e ambiente Python | Disponível |
+| Leitura de CSV do Comex Stat | Disponível |
+| Agregação mensal de peso líquido e FOB | Disponível |
+| Site, metodologia e catálogo de documentos | Disponível |
+| Agricultura e relação ano-safra/ano civil | Pendente de convenção final |
+| Câmbio, deflator e valores constantes | Pendente de implementação |
+| Cenários, lucro e HHI validados | Pendente de modelos finais |
+| Capacidade, custos e alocação por portos | Pendente de dados e validação |
+
+As tabelas e demonstrações preliminares não constituem recomendação comercial nem representam uma cooperativa real.
+
+## Como executar
+
+### Requisitos
+
+- Python 3.11 ou superior;
+- Git, caso o projeto seja clonado pelo repositório.
+
+### Instalação no Windows
+
 ```powershell
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -e .
 ```
-Em macOS ou Linux, crie e ative o ambiente com `python3 -m venv .venv` e `source .venv/bin/activate`, depois instale o projeto com `python -m pip install -e .`.
-## Como executar
-Na raiz do repositório, com o ambiente virtual ativo, o comando sem subcomando prepara as pastas:
+
+Em macOS ou Linux, use `python3 -m venv .venv`, ative com `source .venv/bin/activate` e execute `python -m pip install -e .`.
+
+### Preparar a estrutura de dados
+
 ```powershell
 python -m soja_pipeline
 ```
-Para tratar um CSV do Comex Stat e gerar a base mensal por NCM e país de destino quando essa informação existir na origem:
+
+### Tratar exportações
 
 ```powershell
 python -m soja_pipeline exportacoes --arquivo data/originais/exportacoes.csv --ncm 12019000
 ```
 
-O resultado é salvo em `data/tratados/exportacoes_mensais.csv`. O arquivo original não é alterado. Se não houver coluna de país de destino, o programa avisa que o resultado não permite calcular concentração por destino. O código NCM informado é filtrado, mas sua vigência histórica precisa ser conferida separadamente.
-## Estrutura das pastas
+O comando gera `data/tratados/exportacoes_mensais.csv` sem modificar o arquivo original. Quando o país de destino não existe na fonte, o programa sinaliza que a base não permite calcular concentração por destino.
+
+## Estrutura principal
+
 ```text
 .
-├── config/                 # parâmetros de execução e caminhos
+├── config/                  # parâmetros e caminhos
 ├── data/
-│   ├── originais/           # arquivos de fontes preservados sem alteração
-│   ├── hipoteses/           # custos, capacidades e cenários hipotéticos
-│   ├── tratados/            # bases limpas e harmonizadas
-│   └── resultados/          # indicadores, comparações e alocações
-├── docs/                   # decisões metodológicas e dicionário de dados
-├── src/
-│   └── soja_pipeline/       # código do projeto
-├── pyproject.toml           # configuração para instalar o pacote
-├── tests/                  # verificações automatizadas a adicionar
-├── .gitignore
-├── README.md
+│   ├── originais/          # arquivos preservados
+│   ├── hipoteses/          # custos, capacidades e cenários
+│   ├── tratados/           # bases limpas e harmonizadas
+│   └── resultados/         # indicadores e comparações
+├── docs/                    # metodologia e decisões
+├── frontend/                # site e materiais autorizados
+├── src/soja_pipeline/       # pipeline Python
+├── CONTRIBUTING.md          # regras para colaboração
+├── LICENSE                  # licença do código
+├── pyproject.toml           # pacote e dependências
 └── requirements.txt
 ```
-O comando inicial cria as pastas de configuração, documentação e dados na primeira execução. Dados originais ou tratados grandes e com restrição de redistribuição devem ficar fora do Git; registre a fonte, a consulta, a data de extração e como obtê-los.
-## Dependências
-As dependências estão declaradas em `pyproject.toml` e espelhadas em `requirements.txt`:
-- `pandas`: leitura, transformação e validação de tabelas;
-- `openpyxl`: leitura e escrita de arquivos Excel;
-- `requests`: consultas HTTP a fontes que disponibilizem acesso automatizado.
-As versões estão limitadas no arquivo. A lista deverá ser revisada quando o pipeline for implementado e acompanhada por travamento de versões para facilitar a reprodução entre máquinas.
 
-## Leitura e cálculo de exportações
+## Tecnologias e dependências
 
-O módulo `soja_pipeline.dados` carrega CSV como texto, preservando códigos com zeros à esquerda e os arquivos originais. `soja_pipeline.calculos` agrega FOB e peso líquido por ano, mês e NCM, incluindo destino quando disponível, converte quilogramas em toneladas e calcula o preço FOB implícito como FOB dividido pelas toneladas.
+- **Python e Pandas:** leitura, transformação e agregação de tabelas;
+- **OpenPyXL:** leitura e escrita de planilhas Excel;
+- **Requests:** acesso a fontes que ofereçam consulta automatizada;
+- **HTML, CSS e JavaScript:** interface e visualização do projeto;
+- **GitHub:** versionamento, revisão e colaboração;
+- **Vercel:** hospedagem do front-end.
 
-O código ainda não calcula produtividade, câmbio/deflator, lucro, cenários ou alocação por portos. Essas etapas dependem das fontes, convenções e hipóteses pendentes abaixo. A tabela mensal é descritiva e não valida uma estratégia comercial.
-## Fontes e regras pendentes
-- Documentar a relação entre ano-safra e ano civil sem inferir datas ausentes.
-- Definir a agregação mensal da PTAX, o mês-base do IPCA e a regra de deflação.
-- Completar a movimentação mensal observada por porto e produto.
-- Decidir se o modelo exige cotações mensais de frete por rota.
-- Obter ou definir capacidade portuária, separando observações de hipóteses.
-- Documentar rotas, componentes, moeda e método para custos hipotéticos.
-Até essas decisões serem registradas, o código deverá sinalizar dados ou métodos pendentes, sem inventar valores.
+As dependências Python estão declaradas em `pyproject.toml` e `requirements.txt`.
+
+## Decisões ainda pendentes
+
+- documentar a relação definitiva entre ano-safra e ano civil;
+- definir a agregação mensal da PTAX, o mês-base do IPCA e a regra de deflação;
+- completar a movimentação mensal observada por porto e produto;
+- definir a granularidade dos fretes e a composição dos custos por rota;
+- separar capacidade portuária observada de capacidade hipotética;
+- executar e verificar os cenários, o lucro, o HHI e a alocação portuária.
+
+Até essas decisões serem registradas, o projeto deve sinalizar informações pendentes sem inventar valores.
+
+## Equipe
+
+- **Pedro Lucas Rolim:** sistema reproduzível, dashboard e integração do site;
+- **Caio Rafael Tavares da Silva:** indicadores de produtividade e documentação metodológica;
+- **José Guilherme Paes Rodrigues:** modelos matemáticos de oferta e demanda;
+- **João Guilherme:** distribuição logística e alocação portuária;
+- **Luís Felipe:** pitch de dez minutos;
+- **Caio Henrique:** apoio transversal como coringa da equipe.
+
+O [catálogo de documentos](frontend/assets/documentos/README.md) identifica as fontes e as frentes técnicas responsáveis pelos materiais incluídos.
+
+## Contribuições
+
+Correções e melhorias futuras são bem-vindas. Consulte o [guia de contribuição](CONTRIBUTING.md) antes de enviar código, dados ou documentos.
+
+## Licença e materiais
+
+O código-fonte original está disponível sob a [Licença MIT](LICENSE), mediante concordância dos respectivos autores.
+
+A licença não abrange automaticamente marcas, logotipos, o enunciado original do PBL, documentos acadêmicos, dados ou contribuições de terceiros. Esses materiais permanecem sujeitos aos direitos e termos de suas fontes.
