@@ -25,12 +25,12 @@ _MESES = {
 }
 
 _ALIAS_COLUNAS = {
-    "ano": ("ano",),
-    "mes": ("mes",),
-    "codigo_ncm": ("codigo_ncm", "ncm"),
-    "valor_fob_usd": ("valor_us_fob", "valor_fob_us", "valor_fob_usd"),
+    "ano": ("ano", "co_ano"),
+    "mes": ("mes", "co_mes"),
+    "codigo_ncm": ("codigo_ncm", "ncm", "co_ncm"),
+    "valor_fob_usd": ("valor_us_fob", "valor_fob_us", "valor_fob_usd", "vl_fob"),
     "quilograma_liquido": ("quilograma_liquido", "kg_liquido", "peso_liquido"),
-    "pais_destino": ("pais", "pais_de_destino", "pais_destino"),
+    "pais_destino": ("pais", "pais_de_destino", "pais_destino", "co_pais"),
 }
 
 
