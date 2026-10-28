@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="resultados-metodologia.css" />
+    <link rel="stylesheet" href="resultados-metodologia.css?v=portfolio-docs-2026" />
     <script src="resultados-metodologia.js" defer></script>
   </head>
   <body>
@@ -31,36 +31,37 @@
     </header>
 
     <main>
+      <aside class="archive-notice" aria-label="Situação da versão publicada"><strong>Versão acadêmica encerrada</strong><p>Registro da versão apresentada em 2026. <b>Dado observado</b> possui fonte identificada; <b>calculado</b> indica saída reproduzível; <b>demonstração didática</b> usa valores ilustrativos; <b>não validado</b> não deve ser interpretado como resultado empírico.</p></aside>
       <section class="results-hero">
         <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span> RESULTADOS EM CONSTRUÇÃO · 2015—2025</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> REGISTRO DA VERSÃO APRESENTADA · 2015—2025</div>
           <h1>Resultados claros.<br /><em>Métodos rastreáveis.</em></h1>
           <p>Esta área reúne cálculos, hipóteses e documentos produzidos pela equipe. Cada item informa o nível de validação para que exemplos didáticos não sejam confundidos com resultados empíricos concluídos.</p>
           <a class="hero-cta" href="#dashboard">Explorar o dashboard <span aria-hidden="true">↓</span></a>
         </div>
         <aside class="validation-key" aria-label="Legenda dos níveis de validação">
           <h2>Níveis de validação</h2>
-          <p><span class="status status-preliminary">Preliminar</span> calculado, mas depende de fonte ou convenção a confirmar.</p>
-          <p><span class="status status-hypothetical">Hipotético</span> demonstra o método com parâmetros ilustrativos.</p>
-          <p><span class="status status-pending">Pendente</span> fórmula definida, sem base real completa.</p>
+          <p><span class="status status-preliminary">Não validado</span> valor calculado, mas sem confirmação completa da fonte ou convenção.</p>
+          <p><span class="status status-hypothetical">Demonstração didática</span> explica o método com parâmetros ilustrativos ou sintéticos.</p>
+          <p><span class="status status-pending">Não executado</span> estrutura definida, sem resultado produzido na versão apresentada.</p>
         </aside>
       </section>
 
       <section class="results-section" id="dashboard">
         <div class="results-heading">
           <div><span class="section-index">01 / DASHBOARD PRELIMINAR</span><h2>O que já pode ser<br /><em>interpretado com cautela.</em></h2></div>
-          <p>Os números abaixo ajudam a orientar o trabalho. A versão final dependerá da confirmação das séries da Conab, Comex Stat, BLS e ANTAQ.</p>
+          <p>Os números abaixo registram o estágio alcançado. As séries da Conab, Comex Stat, BLS e ANTAQ que não foram confirmadas permanecem identificadas como não validadas.</p>
         </div>
         <div class="metric-grid">
-          <article class="metric-card"><span class="status status-preliminary">Preliminar</span><strong>+1,85%</strong><h3>Produtividade da terra</h3><p>Crescimento médio anual indicado entre 2015 e 2025, sujeito à confirmação da série agrícola.</p></article>
-          <article class="metric-card"><span class="status status-preliminary">Preliminar</span><strong>−2,65%</strong><h3>Preço real</h3><p>Variação anual estimada após deflação pelo CPI-U, com base 2025 ainda estimada.</p></article>
-          <article class="metric-card"><span class="status status-preliminary">Preliminar</span><strong>120,6</strong><h3>Índice parcial de eficiência</h3><p>Base 2015 = 100. Considera apenas a terra como insumo e não representa uma PTF completa.</p></article>
-          <article class="metric-card"><span class="status status-hypothetical">Hipotético</span><strong>125 kg/ha</strong><h3>Dose econômica ilustrativa</h3><p>Resultado de uma função didática de fertilizante que ainda precisa de calibração agronômica.</p></article>
+          <article class="metric-card"><span class="status status-preliminary">Não validado</span><strong>+1,85%</strong><h3>Produtividade da terra</h3><p>Crescimento médio anual indicado entre 2015 e 2025, sem confirmação final da série agrícola.</p></article>
+          <article class="metric-card"><span class="status status-preliminary">Não validado</span><strong>−2,65%</strong><h3>Preço real</h3><p>Variação anual estimada após deflação pelo CPI-U, com base 2025 estimada.</p></article>
+          <article class="metric-card"><span class="status status-preliminary">Não validado</span><strong>120,6</strong><h3>Índice parcial de eficiência</h3><p>Base 2015 = 100. Considera apenas a terra como insumo e não representa uma PTF completa.</p></article>
+          <article class="metric-card"><span class="status status-hypothetical">Demonstração didática</span><strong>125 kg/ha</strong><h3>Dose econômica ilustrativa</h3><p>Resultado sintético de uma função didática, sem calibração agronômica.</p></article>
         </div>
 
         <div class="optimization-panel" id="lucro-otimo">
           <div>
-            <span class="status status-preliminary">Modelo didático</span>
+            <span class="status status-hypothetical">Demonstração didática</span>
             <h3>Calculadora de lucro ótimo</h3>
             <p>Altere o preço FOB para observar o comportamento da função de custo fornecida pelo PBL. A simulação não incorpora capacidade, contratos, fretes, custos portuários ou validação dos preços históricos.</p>
           </div>
@@ -81,12 +82,12 @@
 
       <section class="models-section" id="oferta-demanda">
         <div class="results-heading">
-          <div><span class="section-index">02 / OFERTA E DEMANDA</span><h2>Estrutura pronta.<br /><em>Estimação ainda pendente.</em></h2></div>
+          <div><span class="section-index">02 / OFERTA E DEMANDA</span><h2>Estrutura demonstrativa.<br /><em>Não estimada empiricamente.</em></h2></div>
           <p>As retas abaixo vêm de três observações hipotéticas usadas para demonstrar o ajuste linear. Elas não representam a oferta ou a demanda empírica da soja brasileira.</p>
         </div>
         <div class="model-grid">
           <article class="model-card demand-card">
-            <span class="status status-hypothetical">Hipotético</span>
+            <span class="status status-hypothetical">Demonstração didática</span>
             <h3>Demanda ilustrativa</h3>
             <div class="model-formula">Q<sub>d</sub> = 150 − 0,1P</div>
             <p>A inclinação negativa demonstra que a quantidade demandada diminui quando o preço aumenta. Os coeficientes precisam ser reestimados com a série observada.</p>
@@ -100,7 +101,7 @@
             </svg>
           </div>
           <article class="model-card supply-card">
-            <span class="status status-hypothetical">Hipotético</span>
+            <span class="status status-hypothetical">Demonstração didática</span>
             <h3>Oferta ilustrativa</h3>
             <div class="model-formula">Q<sub>s</sub> = 30 + 0,2P</div>
             <p>A inclinação positiva demonstra a resposta da quantidade ofertada ao preço. Ainda faltam escolha econométrica, testes e validação dos resíduos.</p>
@@ -111,13 +112,13 @@
 
       <section class="scenarios-section" id="cenarios">
         <div class="results-heading light-heading">
-          <div><span class="section-index">03 / STRESS TESTS</span><h2>Três choques definidos.<br /><em>Resultados ainda não calculados.</em></h2></div>
+          <div><span class="section-index">03 / STRESS TESTS</span><h2>Três choques definidos.<br /><em>Não executados na versão apresentada.</em></h2></div>
           <p>Os cartões registram os cenários exigidos pelo PBL e as variáveis que deverão ser recalculadas sob a mesma linha de base.</p>
         </div>
         <div class="scenario-grid">
-          <article><div class="scenario-top"><span>01</span><span class="status status-pending">Pendente</span></div><h3>China compra 10 Mt a menos</h3><p>Recalcular preço e quantidade de equilíbrio, lucro ótimo, HHI e redistribuição para outros destinos.</p><small>Falta: modelo de demanda por destino e limites de absorção dos mercados alternativos.</small></article>
-          <article><div class="scenario-top"><span>02</span><span class="status status-pending">Pendente</span></div><h3>Dólar perde 15% frente ao real</h3><p>Recalcular receita e custos convertidos, lucro ótimo e valor real por hectare com uma convenção cambial única.</p><small>Falta: PTAX de referência, exposição dos custos ao câmbio e regra de conversão.</small></article>
-          <article><div class="scenario-top"><span>03</span><span class="status status-pending">Pendente</span></div><h3>Itaqui fica 20% mais caro</h3><p>Recalcular custo logístico, lucro e alocação entre portos respeitando capacidades e rotas disponíveis.</p><small>Falta: matriz de rotas, custos, capacidades e volumes máximos por porto.</small></article>
+          <article><div class="scenario-top"><span>01</span><span class="status status-pending">Não executado</span></div><h3>China compra 10 Mt a menos</h3><p>Estrutura prevista para recalcular preço e quantidade de equilíbrio, lucro ótimo, HHI e redistribuição.</p><small>Modelo de saída projetado — não executado na versão apresentada.</small></article>
+          <article><div class="scenario-top"><span>02</span><span class="status status-pending">Não executado</span></div><h3>Dólar perde 15% frente ao real</h3><p>Estrutura prevista para recalcular receita, custos convertidos, lucro ótimo e valor real por hectare.</p><small>Modelo de saída projetado — não executado na versão apresentada.</small></article>
+          <article><div class="scenario-top"><span>03</span><span class="status status-pending">Não executado</span></div><h3>Itaqui fica 20% mais caro</h3><p>Estrutura prevista para recalcular custo logístico, lucro e alocação entre portos.</p><small>Modelo de saída projetado — não executado na versão apresentada.</small></article>
         </div>
         <div class="scenario-output"><strong>Saídas comuns esperadas</strong><span>Preço de equilíbrio</span><span>Quantidade</span><span>Lucro ótimo</span><span>Produtividade por hectare</span><span>HHI</span><span>Alocação portuária</span></div>
       </section>
@@ -125,7 +126,7 @@
       <section class="logistics-section" id="logistica">
         <div class="results-heading">
           <div><span class="section-index">04 / MODELO LOGÍSTICO</span><h2>Da região produtora<br /><em>ao mercado internacional.</em></h2></div>
-          <p>A rede e a formulação matemática estão definidas. Custos, capacidades, oferta exportável e demanda ainda precisam ser completados antes da solução numérica final.</p>
+          <p>A rede e a formulação matemática estão definidas. Custos, capacidades, oferta exportável e demanda não foram completados nesta versão; por isso, não há solução numérica final.</p>
         </div>
 
         <aside class="logistics-notice"><span class="status status-preliminary">Estrutura definida</span><strong>O documento organiza o método, não uma alocação ótima concluída.</strong><p>Referências históricas, parâmetros do modelo e hipóteses de cenário permanecem identificados separadamente.</p></aside>
@@ -157,13 +158,13 @@
         </div>
 
         <div class="freight-block">
-          <div class="card-heading"><div><span>CUSTOS PARCIAIS</span><h3>Fretes de referência</h3></div><span class="status status-preliminary">Preliminar</span></div>
+          <div class="card-heading"><div><span>CUSTOS PARCIAIS</span><h3>Fretes de referência</h3></div><span class="status status-preliminary">Não validado</span></div>
           <div class="freight-table-wrap"><table class="freight-table"><thead><tr><th>Rota</th><th>Distância</th><th>Frete médio</th><th>Uso no modelo</th></tr></thead><tbody><tr><td>Sorriso (MT) → Santos (SP)</td><td>2.287 km</td><td>R$ 455,83/t</td><td>Referência de corredor específico</td></tr><tr><td>Rondonópolis (MT) → Santos (SP)</td><td>1.632 km</td><td>R$ 350,83/t</td><td>Referência de corredor específico</td></tr><tr><td>Rio Verde (GO) → Paranaguá (PR)</td><td>Não informado</td><td>≈ R$ 246,03/t</td><td>Média dos 12 valores mensais</td></tr></tbody></table></div>
           <p class="card-note">As tarifas ausentes não serão preenchidas com estimativas sem identificação. A matriz completa deverá manter moeda, período e escopo equivalentes.</p>
         </div>
 
         <div class="model-definition">
-          <div class="objective-card"><span class="status status-pending">Solução pendente</span><h3>Função objetivo</h3><div class="objective-formula">min Z = ΣᵢΣⱼ cᵢⱼxᵢⱼ + ΣⱼΣₖ hⱼₖyⱼₖ</div><p>Minimizar o custo terrestre, portuário e de exportação. <b>xᵢⱼ</b> representa o fluxo da origem ao porto e <b>yⱼₖ</b>, o fluxo do porto ao destino.</p></div>
+          <div class="objective-card"><span class="status status-pending">Não executado</span><h3>Função objetivo</h3><span class="output-model-label">Modelo de saída projetado — não executado na versão apresentada</span><div class="objective-formula">min Z = ΣᵢΣⱼ cᵢⱼxᵢⱼ + ΣⱼΣₖ hⱼₖyⱼₖ</div><p>Minimizar o custo terrestre, portuário e de exportação. <b>xᵢⱼ</b> representa o fluxo da origem ao porto e <b>yⱼₖ</b>, o fluxo do porto ao destino.</p></div>
           <div class="constraint-grid">
             <article><strong>Disponibilidade</strong><span>Σⱼ xᵢⱼ ≤ Sᵢ</span><p>A saída não supera a oferta exportável.</p></article>
             <article><strong>Conservação de massa</strong><span>Σᵢ xᵢⱼ = Σₖ yⱼₖ</span><p>Entradas e saídas do porto são iguais.</p></article>
@@ -178,7 +179,7 @@
         </div>
 
         <div class="logistics-scenarios">
-          <div class="card-heading"><div><span>COMPARAÇÃO OPERACIONAL</span><h3>Plano sem adaptação × plano reotimizado</h3></div><small>Efeitos conceituais; resultados quantitativos pendentes</small></div>
+          <div class="card-heading"><div><span>COMPARAÇÃO OPERACIONAL</span><h3>Plano sem adaptação × plano reotimizado</h3></div><small>Modelo de saída projetado — não executado na versão apresentada</small></div>
           <div class="comparison-grid"><article><b>China −10 Mt</b><p>O plano original pode exceder a nova demanda. A reotimização procura destinos alternativos, respeitando absorção e capacidade.</p></article><article><b>Dólar −15%</b><p>A receita convertida em reais diminui se o preço em dólares permanecer constante. Custos domésticos não caem automaticamente.</p></article><article><b>Itaqui +20%</b><p>O plano adaptado pode reduzir o uso de Itaqui caso existam rotas alternativas viáveis e mais econômicas.</p></article></div>
         </div>
 
@@ -189,7 +190,7 @@
 
         <div class="model-status">
           <div class="card-heading"><div><span>SITUAÇÃO ATUAL</span><h3>O que está pronto e o que falta</h3></div><a href="assets/documentos/modelo_distribuicao_logistica_soja.pdf" target="_blank" rel="noreferrer">Abrir relatório completo ↗</a></div>
-          <div class="status-grid"><article><span class="status status-preliminary">Definido</span><h4>Rede e formulação</h4><p>Origens, portos, destinos, objetivo e restrições documentados.</p></article><article><span class="status status-preliminary">Parcial</span><h4>Custos e demanda</h4><p>Há referências históricas, mas as matrizes ainda estão incompletas.</p></article><article><span class="status status-pending">Pendente</span><h4>Oferta e capacidades</h4><p>Disponibilidade exportável e limites portuários precisam de fonte e período.</p></article><article><span class="status status-pending">Pendente</span><h4>Solução e cenários</h4><p>Fluxos ótimos, custos, lucro e HHI dependem da execução com parâmetros completos.</p></article></div>
+          <div class="status-grid"><article><span class="status status-preliminary">Definido</span><h4>Rede e formulação</h4><p>Origens, portos, destinos, objetivo e restrições documentados.</p></article><article><span class="status status-preliminary">Parcial não validado</span><h4>Custos e demanda</h4><p>Há referências históricas, mas as matrizes não foram concluídas.</p></article><article><span class="status status-pending">Não executado</span><h4>Oferta e capacidades</h4><p>Modelo de saída projetado — não executado na versão apresentada.</p></article><article><span class="status status-pending">Não executado</span><h4>Solução e cenários</h4><p>Modelo de saída projetado — não executado na versão apresentada.</p></article></div>
         </div>
       </section>
 
@@ -204,7 +205,7 @@
           <article><span>03</span><h3>Deflação</h3><p>Valores nominais são convertidos para dólares de 2025 por meio do CPI-U médio anual.</p></article>
           <article><span>04</span><h3>Eficiência produtiva</h3><p>O índice atual compara produção e área. Fertilizantes, trabalho, máquinas e demais insumos ainda precisam ser incorporados.</p></article>
           <article><span>05</span><h3>Otimização</h3><p>O lucro é maximizado quando receita marginal e custo marginal se igualam, respeitando o shutdown point.</p></article>
-          <article><span>06</span><h3>Logística portuária</h3><p>Produtividade logística e ocupação do berço têm fórmulas definidas, mas os dados reais de Itaqui continuam pendentes.</p></article>
+          <article><span>06</span><h3>Logística portuária</h3><p>Produtividade logística e ocupação do berço têm fórmulas definidas, mas os dados reais de Itaqui não foram incorporados à versão apresentada.</p></article>
         </div>
       </section>
 
@@ -214,16 +215,19 @@
           <p>Os PDFs preservam as fórmulas, premissas, exemplos e lacunas declaradas por cada frente.</p>
         </div>
         <div class="document-list">
-          <a href="assets/documentos/ST4.1_Preparar_dados_agricolas.pdf" target="_blank" rel="noreferrer"><span>ST4.1</span><strong>Preparar dados agrícolas</strong><small>Caio Rafael · IBGE/PAM e Conab</small><b>↗</b></a>
-          <a href="assets/documentos/ST4.2_Produtividade_e_valor_bruto.pdf" target="_blank" rel="noreferrer"><span>ST4.2</span><strong>Produtividade e valor bruto</strong><small>Caio Rafael · IBGE/PAM e Comex Stat</small><b>↗</b></a>
-          <a href="assets/documentos/ST4.3_Aplicar_deflacao.pdf" target="_blank" rel="noreferrer"><span>ST4.3</span><strong>Aplicar deflação</strong><small>Caio Rafael · séries declaradas no documento</small><b>↗</b></a>
-          <a href="assets/documentos/ST4.4_Construir_PTF.pdf" target="_blank" rel="noreferrer"><span>ST4.4</span><strong>Construir índice de eficiência</strong><small>Caio Rafael · dados agrícolas</small><b>↗</b></a>
-          <a href="assets/documentos/ST4.5_Produtividade_marginal.pdf" target="_blank" rel="noreferrer"><span>ST4.5</span><strong>Produtividade marginal</strong><small>Caio Rafael · simulação didática</small><b>↗</b></a>
-          <a href="assets/documentos/ST4.6_Indicadores_portuarios.pdf" target="_blank" rel="noreferrer"><span>ST4.6</span><strong>Indicadores portuários</strong><small>Caio Rafael · ANTAQ e referências portuárias</small><b>↗</b></a>
-          <a href="assets/documentos/Resultado-Calculos.pdf" target="_blank" rel="noreferrer"><span>OTM</span><strong>Otimização econômica</strong><small>Equipe PBL · função de custo do exercício</small><b>↗</b></a>
-          <a href="assets/documentos/modelo_distribuicao_logistica_soja.pdf" target="_blank" rel="noreferrer"><span>ST5</span><strong>Modelo de distribuição logística</strong><small>João Guilherme · IBGE, MDIC, Conab e ANTAQ</small><b>↗</b></a>
+          <a href="assets/documentos/Relatorio_Portfolio_Soja_em_Fluxo.pdf" target="_blank" rel="noreferrer"><span>REL</span><strong>Relatório público do projeto</strong><small class="document-meta"><i>Responsável:</i> Pedro Lucas, com conteúdo da equipe<br /><i>Fontes:</i> documentos técnicos e bases citadas no relatório<br /><i>Versão:</i> portfólio 2026<br /><mark class="document-status status-valid">VALIDADO PARA PUBLICAÇÃO</mark></small><b>↗</b></a>
+          <a href="assets/documentos/Apresentacao_PBL_Soja_em_Fluxo_Corrigida_v2.pptx" target="_blank" rel="noreferrer"><span>PPT</span><strong>Apresentação PBL — Soja em fluxo</strong><small class="document-meta"><i>Responsável:</i> Luís Felipe, com conteúdo da equipe<br /><i>Fontes:</i> documentos e resultados do projeto<br /><i>Versão:</i> corrigida v2, apresentada em 2026<br /><mark class="document-status status-valid">VALIDADO PARA APRESENTAÇÃO</mark></small><b>↗</b></a>
+          <a href="assets/dados/Otimizacao_Cooperativa_Matopiba_2015_2025.xlsx" target="_blank" rel="noreferrer"><span>XLSX</span><strong>Otimização da cooperativa MATOPIBA</strong><small class="document-meta"><i>Responsável:</i> equipe PBL; autoria individual não informada<br /><i>Fontes:</i> dados e hipóteses declarados na planilha<br /><i>Versão:</i> recorte 2015–2025, apresentada em 2026<br /><mark class="document-status status-unvalidated">NÃO VALIDADO</mark></small><b>↗</b></a>
+          <a href="assets/documentos/ST4.1_Preparar_dados_agricolas.pdf" target="_blank" rel="noreferrer"><span>ST4.1</span><strong>Preparar dados agrícolas</strong><small class="document-meta"><i>Responsável:</i> Caio Rafael<br /><i>Fontes:</i> IBGE/PAM e Conab<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-unvalidated">NÃO VALIDADO</mark></small><b>↗</b></a>
+          <a href="assets/documentos/ST4.2_Produtividade_e_valor_bruto.pdf" target="_blank" rel="noreferrer"><span>ST4.2</span><strong>Produtividade e valor bruto</strong><small class="document-meta"><i>Responsável:</i> Caio Rafael<br /><i>Fontes:</i> IBGE/PAM e Comex Stat<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-unvalidated">NÃO VALIDADO</mark></small><b>↗</b></a>
+          <a href="assets/documentos/ST4.3_Aplicar_deflacao.pdf" target="_blank" rel="noreferrer"><span>ST4.3</span><strong>Aplicar deflação</strong><small class="document-meta"><i>Responsável:</i> Caio Rafael<br /><i>Fontes:</i> séries de preços e deflator declarados no documento<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-unvalidated">NÃO VALIDADO</mark></small><b>↗</b></a>
+          <a href="assets/documentos/ST4.4_Construir_PTF.pdf" target="_blank" rel="noreferrer"><span>ST4.4</span><strong>Construir índice de eficiência</strong><small class="document-meta"><i>Responsável:</i> Caio Rafael<br /><i>Fontes:</i> dados agrícolas citados no documento<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-unvalidated">NÃO VALIDADO</mark></small><b>↗</b></a>
+          <a href="assets/documentos/ST4.5_Produtividade_marginal.pdf" target="_blank" rel="noreferrer"><span>ST4.5</span><strong>Produtividade marginal</strong><small class="document-meta"><i>Responsável:</i> Caio Rafael<br /><i>Fontes:</i> parâmetros hipotéticos declarados no documento<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-demo">DEMONSTRAÇÃO DIDÁTICA</mark></small><b>↗</b></a>
+          <a href="assets/documentos/ST4.6_Indicadores_portuarios.pdf" target="_blank" rel="noreferrer"><span>ST4.6</span><strong>Indicadores portuários</strong><small class="document-meta"><i>Responsável:</i> Caio Rafael<br /><i>Fontes:</i> ANTAQ e referências portuárias indicadas no documento<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-unvalidated">NÃO VALIDADO</mark></small><b>↗</b></a>
+          <a href="assets/documentos/Resultado-Calculos.pdf" target="_blank" rel="noreferrer"><span>OTM</span><strong>Otimização econômica</strong><small class="document-meta"><i>Responsável:</i> equipe PBL<br /><i>Fontes:</i> função de custo fornecida no exercício<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-demo">DEMONSTRAÇÃO DIDÁTICA</mark></small><b>↗</b></a>
+          <a href="assets/documentos/modelo_distribuicao_logistica_soja.pdf" target="_blank" rel="noreferrer"><span>ST5</span><strong>Modelo de distribuição logística</strong><small class="document-meta"><i>Responsável:</i> João Guilherme<br /><i>Fontes:</i> IBGE/PAM, MDIC/Comex Stat, Conab e ANTAQ<br /><i>Versão:</i> apresentada em 2026<br /><mark class="document-status status-not-run">MODELO NÃO EXECUTADO</mark></small><b>↗</b></a>
         </div>
-        <aside class="data-warning"><strong>Aviso de validação</strong><p>Os documentos contêm valores preliminares e hipóteses. Antes da entrega final, confirme as fontes primárias, registre as datas de consulta e substitua exemplos hipotéticos por dados observados quando o enunciado exigir.</p></aside>
+        <aside class="data-warning"><strong>Registro da versão apresentada</strong><p>Os documentos podem conter dados observados, cálculos não validados, hipóteses e demonstrações didáticas. Eles permanecem publicados como memória acadêmica e não devem ser interpretados como previsão de mercado, operação real ou recomendação comercial.</p></aside>
       </section>
     </main>
 

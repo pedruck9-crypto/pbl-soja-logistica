@@ -31,6 +31,7 @@
     </header>
 
     <main id="inicio">
+      <aside class="archive-notice" aria-label="Situação da versão publicada"><strong>Versão acadêmica encerrada</strong><p>Este site registra a versão apresentada em 2026 e não receberá atualizações regulares. Valores identificados como <b>demonstração didática</b>, <b>hipótese</b>, <b>sintético</b> ou <b>não validado</b> não representam operações reais, previsões de mercado ou recomendações comerciais.</p></aside>
       <section class="hero" id="visao-geral">
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-dot"></span> PROJETO PBL · ES02BV</div>
@@ -123,10 +124,10 @@
           <p>O projeto avança em camadas. Cada número mantém sua origem, unidade e granularidade.</p>
         </div>
         <div class="pipeline" aria-label="Etapas do fluxo de dados">
-          <div class="pipeline-step step-done"><div class="step-marker">01<span>✓</span></div><div class="step-content"><span>CAMADA 01</span><h3>Originais</h3><p>Fontes preservadas como foram obtidas.</p></div><span class="step-state">EM ANDAMENTO</span></div>
+          <div class="pipeline-step step-done"><div class="step-marker">01<span>✓</span></div><div class="step-content"><span>CAMADA 01</span><h3>Originais</h3><p>Fontes preservadas como foram obtidas.</p></div><span class="step-state">ENTREGA PARCIAL</span></div>
           <div class="pipeline-step"><div class="step-marker">02</div><div class="step-content"><span>CAMADA 02</span><h3>Hipóteses</h3><p>Custos e capacidades identificados como estimativas.</p></div><span class="step-state state-open">A DEFINIR</span></div>
-          <div class="pipeline-step"><div class="step-marker">03</div><div class="step-content"><span>CAMADA 03</span><h3>Tratados</h3><p>Unidades, chaves e frequências harmonizadas.</p></div><span class="step-state state-open">A IMPLEMENTAR</span></div>
-          <div class="pipeline-step"><div class="step-marker">04</div><div class="step-content"><span>CAMADA 04</span><h3>Resultados</h3><p>Indicadores e cenários após revisão dos cálculos.</p></div><span class="step-state state-open">A VALIDAR</span></div>
+          <div class="pipeline-step"><div class="step-marker">03</div><div class="step-content"><span>CAMADA 03</span><h3>Tratados</h3><p>Unidades, chaves e frequências harmonizadas.</p></div><span class="step-state state-open">NÃO CONCLUÍDO</span></div>
+          <div class="pipeline-step"><div class="step-marker">04</div><div class="step-content"><span>CAMADA 04</span><h3>Resultados</h3><p>Indicadores e cenários previstos pelo modelo.</p></div><span class="step-state state-open">NÃO EXECUTADO</span></div>
         </div>
       </section>
 
@@ -149,12 +150,13 @@
               <li>Converte quilogramas em toneladas e calcula FOB por tonelada.</li>
               <li>Salva a tabela tratada em CSV sem sobrescrever o original.</li>
             </ul>
-            <p class="calc-footnote">Ainda não calcula lucro, quantidade ótima, cenários ou alocação por portos. Esses cálculos dependem de dados e premissas adicionais.</p>
+            <span class="output-model-label">Modelo de saída projetado — não executado na versão apresentada</span>
+            <p class="calc-footnote">O pipeline apresentado não calcula lucro, quantidade ótima, cenários ou alocação por portos. Esses cálculos dependem de dados e premissas adicionais.</p>
             <a class="calc-button calc-button-secondary" href="#bases">Voltar às bases de dados <span aria-hidden="true">↑</span></a>
           </article>
 
           <aside class="calculation-card calculation-warning">
-            <div class="example-badge">EXEMPLO · NÃO VALIDADO</div>
+            <div class="example-badge">DEMONSTRAÇÃO DIDÁTICA · NÃO VALIDADA</div>
             <h3>Sobre o PDF da equipe</h3>
             <p>O arquivo apresenta uma tabela anual com preço FOB, quantidade ótima, receita, custo e lucro. Ele ajuda a visualizar um formato possível de saída, mas não foi gerado pelo pipeline atual.</p>
             <p>O PDF não informa as fontes dos preços nem todos os parâmetros e fórmulas necessários para reproduzir os valores. Trate os números como ilustrativos, não como resultados oficiais do projeto.</p>
@@ -168,7 +170,7 @@
             <a href="assets/resultado-calculo.pdf" target="_blank" rel="noreferrer">Abrir em nova aba ↗</a>
           </div>
           <iframe src="assets/resultado-calculo.pdf" title="Prévia do PDF de exemplo de saída dos cálculos" loading="lazy"></iframe>
-          <p>Prévia do arquivo enviado pela equipe. A inclusão no painel não confirma a origem nem a validade dos valores.</p>
+          <p><strong>Título:</strong> Exemplo de saída dos cálculos · <strong>Responsável:</strong> equipe PBL · <strong>Fontes:</strong> não informadas no arquivo · <strong>Versão:</strong> apresentada em 2026 · <strong>Situação:</strong> demonstração didática.</p>
         </div>
       </section>
 
@@ -219,12 +221,13 @@
       </section>
 
       <section class="next-section" id="proximos-passos">
-        <div class="next-label"><div class="eyebrow muted-eyebrow">05 / PRÓXIMOS PASSOS</div><h2>O trabalho continua.</h2><p>Estas definições destravam o cálculo, sem impedir que o código e os métodos avancem agora.</p><a href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">Acompanhar no GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="next-label"><div class="eyebrow muted-eyebrow">05 / TRABALHOS FUTUROS</div><h2>Possíveis continuações.</h2><p>Estas etapas não foram concluídas no ciclo acadêmico apresentado. Permanecem documentadas para uma eventual continuidade futura.</p><a href="https://github.com/pedruck9-crypto/pbl-soja-logistica" target="_blank" rel="noreferrer">Consultar o registro no GitHub <span aria-hidden="true">↗</span></a></div>
         <div class="next-list">
           <div><span>01</span><p>Documentar a ponte entre ano-safra e ano civil</p><b>AGRICULTURA</b></div>
           <div><span>02</span><p>Definir PTAX mensal e mês-base do IPCA</p><b>CÂMBIO</b></div>
           <div><span>03</span><p>Completar movimentação e capacidade por porto</p><b>PORTOS</b></div>
           <div><span>04</span><p>Decidir granularidade e premissas de frete</p><b>FRETES</b></div>
+          <div><span>05</span><p><strong>Análise preditiva com aprendizado de máquina</strong><br />Possível extensão para estimar variações do preço da soja com séries históricas de exportações, câmbio, produção, fretes e indicadores internacionais. Uma implementação futura deverá informar métricas de erro, intervalos de incerteza e comparação com modelos estatísticos de referência.</p><b>PROPOSTA NÃO IMPLEMENTADA NEM VALIDADA</b></div>
         </div>
       </section>
     </main>
