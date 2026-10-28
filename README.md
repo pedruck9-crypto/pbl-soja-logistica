@@ -174,3 +174,5 @@ O código-fonte original está disponível sob a [Licença MIT](LICENSE), median
 A licença não abrange automaticamente marcas, logotipos, o enunciado original do PBL, documentos acadêmicos, dados ou contribuições de terceiros. Esses materiais permanecem sujeitos aos direitos e termos de suas fontes.
 
 Consulte o [aviso de autoria, licença e materiais](NOTICE.md) para conhecer as condições aplicáveis ao código, aos textos do site, aos documentos acadêmicos, aos dados públicos e às marcas citadas no projeto.
+
+As mudanças consolidadas para a publicação estão resumidas nas [notas da versão 1.0 de portfólio](RELEASE_NOTES.md).
