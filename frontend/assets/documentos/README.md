@@ -4,6 +4,7 @@ Os nomes abaixo indicam a frente técnica responsável no projeto. A autoria aca
 
 | Documento | Frente técnica responsável | Fontes e natureza do conteúdo |
 | --- | --- | --- |
+| `Relatorio_Portfolio_Soja_em_Fluxo.pdf` | Pedro Lucas Rolim - síntese, sistema reproduzível, dashboard e integração; equipe PBL - conteúdo acadêmico | Versão pública reduzida do projeto; distingue entregas verificáveis, demonstrações e pendências |
 | `ST4.1_Preparar_dados_agricolas.pdf` | Caio Rafael Tavares da Silva — indicadores de produtividade e documentação metodológica | IBGE/PAM e Conab; preparação e alinhamento temporal |
 | `ST4.2_Produtividade_e_valor_bruto.pdf` | Caio Rafael Tavares da Silva — indicadores de produtividade | IBGE/PAM, Comex Stat e cálculos derivados |
 | `ST4.3_Aplicar_deflacao.pdf` | Caio Rafael Tavares da Silva — documentação metodológica | Séries de preços e deflator declarados no documento |

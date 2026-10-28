@@ -2,7 +2,7 @@
 
 Projeto acadêmico de dados e logística para analisar exportações brasileiras de soja em grão, organizar fontes heterogêneas e preparar comparações de cenários, rentabilidade e alocação portuária.
 
-[Acessar o site publicado](https://pbl-soja-logistica-frontend.vercel.app/) · [Ver resultados e metodologia](https://pbl-soja-logistica-frontend.vercel.app/resultados-metodologia.html) · [Ler o resumo do PBL](docs/RESUMO_PBL.md)
+[Acessar o site publicado](https://pbl-soja-logistica-frontend.vercel.app/) · [Ver resultados e metodologia](https://pbl-soja-logistica-frontend.vercel.app/resultados-metodologia.html) · [Abrir o relatório para portfólio](frontend/assets/documentos/Relatorio_Portfolio_Soja_em_Fluxo.pdf) · [Ler o resumo do PBL](docs/RESUMO_PBL.md)
 
 ## Visão rápida
 
