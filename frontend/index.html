@@ -164,6 +164,38 @@
           </aside>
         </div>
 
+        <section class="pipeline-showcase" aria-labelledby="pipeline-title">
+          <header class="pipeline-showcase-heading">
+            <div><span class="pdf-label">PIPELINE REPRODUZÍVEL · PYTHON</span><h3 id="pipeline-title">Como o CSV se transforma em uma base mensal</h3></div>
+            <a href="https://github.com/pedruck9-crypto/pbl-soja-logistica/tree/Vers%C3%A3o-para-ser-upada-ao%2FPortf%C3%B3lio/src/soja_pipeline" target="_blank" rel="noreferrer">Ver código completo no GitHub ↗</a>
+          </header>
+
+          <div class="pipeline-visual" aria-label="Fluxo do pipeline de exportações">
+            <div><span>01</span><strong>CSV original</strong><small>Arquivo preservado</small></div><b aria-hidden="true">→</b>
+            <div><span>02</span><strong>Leitura</strong><small>Texto e codificação</small></div><b aria-hidden="true">→</b>
+            <div><span>03</span><strong>Validação</strong><small>Campos, NCM e unidades</small></div><b aria-hidden="true">→</b>
+            <div><span>04</span><strong>Agregação</strong><small>Mês e destino</small></div><b aria-hidden="true">→</b>
+            <div><span>05</span><strong>CSV tratado</strong><small>Saída reproduzível</small></div>
+          </div>
+
+          <div class="pipeline-details">
+            <article><span>ENTRADAS RECONHECIDAS</span><h4>Campos do Comex Stat</h4><p><code>CO_ANO</code><code>CO_MES</code><code>CO_NCM</code><code>CO_PAIS</code><code>KG_LIQUIDO</code><code>VL_FOB</code></p></article>
+            <article><span>SAÍDA MENSAL</span><h4>Campos calculados</h4><p><code>ano_mes</code><code>pais_destino</code><code>quantidade_t</code><code>fob_usd</code><code>preco_implicito_usd_t</code></p></article>
+          </div>
+
+          <div class="pipeline-code-grid">
+            <article><span>EXECUTAR NO TERMINAL</span><pre><code>python -m soja_pipeline exportacoes \
+  --arquivo data/originais/exportacoes.csv \
+  --ncm 12019000</code></pre></article>
+            <article><span>TRECHO REPRESENTATIVO</span><pre><code>resultado = calcular_exportacoes_mensais(
+    tabela,
+    codigo_ncm="12019000",
+)</code></pre></article>
+          </div>
+
+          <p class="pipeline-limit"><strong>Limite desta versão:</strong> o pipeline prepara exportações mensais e o preço FOB implícito. Lucro, cenários e alocação portuária permanecem fora da execução apresentada.</p>
+        </section>
+
         <div class="pdf-preview-card">
           <div class="pdf-preview-heading">
             <div><span class="pdf-label">ARQUIVO DE REFERÊNCIA</span><h3>Exemplo de saída dos cálculos</h3></div>
